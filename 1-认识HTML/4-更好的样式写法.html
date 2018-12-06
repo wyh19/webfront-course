@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>之前都是把样式写在元素的style属性里，纯字符串的写法，很不容易阅读和查错，现在升级一下，使用style标签实现样式</div>
+    <hr />
+    <!--这是注释，这一行以上的代码都不用管-->
+    <style>
+        #div1 {
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+        .blue-div{
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            background: blue;
+            margin: 10px;
+            color:#fff;
+            text-align: center;
+            border-radius: 15px;
+        }
+        #div4{
+            width:200px;
+            height: 200px;
+            line-height: 200px;
+            border-radius: 100px;
+            text-align: center;
+            background: pink;
+        }
+    </style>
+
+    <div id="div1">
+        div1,id为div1
+    </div>
+
+    <div class="blue-div">
+        div2,class为blue-div
+    </div>
+
+    <div class="blue-div">
+        div3,class为blue-div
+    </div>
+
+    <div id="div4">
+        盒模型并不意味着方砖:)
+    </div>
+    <!--这也是注释，这一行以下的代码都不用管-->
+    <hr />
+    <div>
+        说明：观察样式是如何生效的，为什么div2。
+    </div>
+    <div>
+        <b>
+            任务：
+        </b>
+        <ol>
+            <li>按F12，打开调试工具，观察各个元素</li>
+            <li>观察样式是如何生效的，为什么div2和div3样式是一样的</li>
+        </ol>
+    </div>
+</body>
+
+</html>

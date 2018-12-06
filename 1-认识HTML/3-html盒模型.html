@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>将html的元素相像成一个个盒子，尤其是块级元素div，更是一个个盒子，正是这些盒子，组合成一个个绚丽的页面:)</div>
+    <hr />
+    <!--这是注释，这一行以上的代码都不用管-->
+
+    <div style="background: red;width:200px;height:100px;">
+        这是一个红色的盒子
+    </div>
+
+    <div style="background: red;width:200px;height:100px;border:5px solid black;">
+        这是一个有黑色边框的绿色的盒子
+    </div>
+
+    <div style="background: blue;width:200px;height:100px;margin:20px;">
+        这是一个有外边距的蓝色盒子，为什么没有其他盒子和我紧靠在一起？
+    </div>
+
+    <div style="background: pink;width:200px;height:100px;padding:20px;">
+        这是一个有内边距的粉色盒子，注意“这”字的位置
+    </div>
+
+    <div>以上的盒子都是宽200高100，为什么大小不一样呢？这里先不解释，直接看下面代码</div>
+
+    <div style="background: red;width:200px;height:100px;box-sizing: border-box;">
+        这是一个红色的盒子
+    </div>
+
+    <div style="background: red;width:200px;height:100px;border:5px solid black;box-sizing: border-box;">
+        这是一个有黑色边框的绿色的盒子
+    </div>
+
+    <div style="background: blue;width:200px;height:100px;margin:20px;box-sizing: border-box;">
+        这是一个有外边距的蓝色盒子，为什么没有其他盒子和我紧靠在一起？
+    </div>
+
+    <div style="background: pink;width:200px;height:100px;padding:20px;box-sizing: border-box;">
+        这是一个有内边距的粉色盒子，注意“这”字的位置
+    </div>
+
+    <div>怎么样，大小一样了吧，如果让他们在一行呢？回忆下怎么设置</div>
+    <div style="background: red;width:200px;height:100px;box-sizing: border-box; display:inline-block;">
+        这是一个红色的盒子
+    </div>
+
+    <div style="background: red;width:200px;height:100px;border:5px solid black;box-sizing: border-box; display:inline-block;">
+        这是一个有黑色边框的绿色的盒子
+    </div>
+
+    <div style="background: blue;width:200px;height:100px;margin:20px;box-sizing: border-box; display:inline-block;">
+        这是一个有外边距的蓝色盒子，为什么没有其他盒子和我紧靠在一起？
+    </div>
+
+    <div style="background: pink;width:200px;height:100px;padding:20px;box-sizing: border-box; display:inline-block;">
+        这是一个有内边距的粉色盒子，注意“这”字的位置
+    </div>
+    <div>那么问题又来了，为什么没有对齐？（其实我也没料到会不对其。。百度了才知道要添加vertical-align: top这个样式，这也说明了布局有很多种，我常用的是flex布局，以后会讲到，这是目前最通用和简单的办法）</div>
+    <div style="background: red;width:200px;height:100px;box-sizing: border-box; display:inline-block;vertical-align: top;">
+        这是一个红色的盒子
+    </div>
+
+    <div style="background: red;width:200px;height:100px;border:5px solid black;box-sizing: border-box; display:inline-block;vertical-align: top;">
+        这是一个有黑色边框的绿色的盒子
+    </div>
+
+    <div style="background: blue;width:200px;height:100px;margin:20px;box-sizing: border-box; display:inline-block;vertical-align: top;">
+        这是一个有外边距的蓝色盒子，为什么没有其他盒子和我紧靠在一起？
+    </div>
+
+    <div style="background: pink;width:200px;height:100px;padding:20px;box-sizing: border-box; display:inline-block;vertical-align: top;">
+        这是一个有内边距的粉色盒子，注意“这”字的位置
+    </div>
+    <div>请忽略蓝色盒子飘出来的现场，因为它事实上是对其的，只是因为设置了外边距，它比其他盒子要“大”</div>
+
+    <!--这也是注释，这一行以下的代码都不用管-->
+    <hr />
+    <div>
+        说明：。
+    </div>
+    <div>
+        <b>
+            任务：
+        </b>
+        <ol>
+            <li>按F12，打开调试工具，观察各个元素</li>
+
+        </ol>
+    </div>
+</body>
+
+</html>
