@@ -9,12 +9,28 @@
 </head>
 
 <body>
-    <div>这个demo用于说明块级元素和行内元素,从这个demo开始，逐步加入样式的使用</div>
+    <div>这个demo用于说明块级元素和行内元素,从这个demo开始，逐步加入样式的使用，这里先使用style属性来设置样式</div>
+    <div>由于样式的使用，这个demo里所有演示用的元素都加上了背景色，用于与文字说明区别开</div>
     <hr />
     <!--这是注释，这一行以上的代码都不用管-->
 
-
-
+    <div>默认的div是块级元素，所谓块级元素就是默认宽度占满父级元素，可以设置元素宽高，使用最多的就是div</div>
+    <div style="background: red;">div1</div>
+    <div style="background: blue;">div2</div>
+    <div style="background: green;width:300px;height:50px;">div3:设置了宽高</div>
+    <div style="background: yellow;width:200px;height:50px;">div4:也设置了宽高，即使上面有空间，我仍然另起一行</div>
+    <div>思考，如何让div3的div4在一行？先看下面的行内元素，所谓行内元素就是不可设置宽高，尽量挤在一行的元素，最典型的就是span</div>
+    <span style="background: red;">span1</span>
+    <span style="background: blue;">span2</span>
+    <span style="background: green;width:300px;height:50px;">span3:设置了宽高,事实上宽高都没有生效，宽度由内容长短决定的</span>
+    <span style="background: yellow;width:200px;height:50px;">span4:也设置了宽高，事实上宽高都没有生效，宽度由内容长短决定的。。。</span>
+    <div>那么回到上面的问题，如何让div3的div4在一行？</div>
+    <div style="display:inline;background: green;width:300px;height:50px;">div3:修改为inline模式，即行内模式，此时div就是不再是块级元素了，而是一个不折不扣的行内元素</div>
+    <div style="display:inline;background: yellow;width:200px;height:50px;">div4:同div3</div>
+    <div>div3和div4虽然在一行了，但是没有意义啊，变得和span一样，失去了原来的高度，再往下看：</div>
+    <div style="display:inline-block;background: green;width:300px;height:50px;">div3:修改为inline-block模式</div>
+    <div style="display:inline-block;background: yellow;width:200px;height:50px;">div4:同div3</div>
+    
     <!--这也是注释，这一行以下的代码都不用管-->
     <hr />
     <div>
@@ -26,8 +42,7 @@
         </b>
         <ol>
             <li>按F12，打开调试工具，观察各个元素</li>
-            <li>思考为什么div1和div2是不同行的，而span1和span2是在一行的</li>
-            <li>还有哪些元素是换行的，哪些是不换行的，下一节将说明什么是块级元素什么是行内元素</li>
+            <li>思考：为什么html要设计出块级元素和行内元素来？提示：下一节将介绍html盒模型</li>
         </ol>
     </div>
 </body>
