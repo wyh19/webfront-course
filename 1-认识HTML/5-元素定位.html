@@ -10,21 +10,87 @@
         /* 既然我(即style标签)已经被介绍过，那就出来优化下那些难看的文字说明吧:) 
          * 给所有文字说明加了个叫info的class 
         */
-        .info{
-            padding: 10px;
-            border-left:4px solid #38f;
+        .info {
+            padding: 5px 10px;
+            border-left: 4px solid #38f;
+            font-size: 14px;
+            margin: 30px 0 20px 0;
         }
     </style>
 </head>
 
 <body>
-    <div></div>
+    <div>之前几个例子布局都像普通文档一样，怎么才能做出像管理系统那样的布局呢？今天介绍一个重要的css属性<a href="http://www.w3school.com.cn/cssref/pr_class_position.asp"
+            target="blank">position</a>,</div>
     <hr />
     <!--这是注释，这一行以上的代码都不用管-->
+
+
+    <div class="info">默认定位(position:static)：就是同一层的块由上而下堆叠;外层的元素包裹内层的元素</div>
     <style>
+        #static1 {
+            background: red;
+            height: 100px;
+            margin-bottom: 10px;
+        }
 
+        #static2 {
+            background: blue;
+            height: 100px;
+            padding: 10px;
+        }
+
+        #static2-1 {
+            background: green;
+            width:50%;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        #static2-2 {
+            background: pink;
+            width:50%;
+            height: 40px;
+        }
     </style>
+    <div id="static1">
+        我是默认定位的第1个块
+    </div>
+    <div id="static2">
+        <div id="static2-1">1</div>
+        <div id="static2-2">2</div>
+    </div>
 
+    <div class="info">相对定位(position:relative)：生成相对定位的元素，相对于其正常位置进行定位。</div>
+    <style>
+        #demo2{
+            background: red;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        #demo2-static{
+            background: green;
+            width:50%;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        #demo2-relative{
+            position: relative; 
+            left:40px; 
+            top:30px;
+            /* 以上三行是上面#static2-2里所没有的，见第43行*/
+            background: pink;
+            width:50%;
+            height: 40px;
+        }
+    </style>
+    <div id="demo2">
+        <div id="demo2-static"></div>
+        <div id="demo2-relative">我相对正常布局，左边多位移了40px,上面多位移了30px</div>
+    </div>
+
+
+    <div class="info">绝对定位(position:absolute)：生成一个相对父元素（父元素需要设置relative）绝对定位的元素（这句话拗口，慢慢体会）。</div>
 
     <!--这也是注释，这一行以下的代码都不用管-->
     <hr />
