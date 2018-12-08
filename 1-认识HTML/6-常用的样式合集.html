@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 既然我(即style标签)已经被介绍过，那就出来优化下那些难看的文字说明吧:) 
+         * 给所有文字说明加了个叫info的class 
+        */
+        .info {
+            padding: 5px 10px;
+            border-left: 4px solid #38f;
+            font-size: 14px;
+            margin: 30px 0 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>之前零散地使用了一些简单的样式，这里汇总演示下。</div>
+    <hr />
+    <!--这是注释，这一行以上的代码都不用管-->
+    <div class="info">文字相关</div>
+    <style>
+        #demo-text {
+            box-sizing: border-box;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            /*以上样式都是为了绘制盒子的准备工作*/
+            font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+            /*字体，我很少设置,记不住这些字体，爱谁谁...*/
+            font-size: 20px;
+            /*字体大小*/
+            font-weight: 600;
+            /*字体粗细，600及以上为粗*/
+            color: #1e83e9;
+            /*字体颜色，可以是标准颜色的单词，比如white，更多的是16进制的色号*/
+            text-align: center;
+            /*文字水平居中*/
+            line-height: 200px;
+            /*文字垂直居中，这只使用一行文字的，以后会介绍更高级的办法，这一招我也用了好多年*/
+        }
+    </style>
+    <div id="demo-text">
+        测试文字
+    </div>
+
+    <div class="info">盒子相关</div>
+    <style>
+        #demo-box {
+            box-sizing: border-box;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            /*以上样式都是为了绘制盒子的准备工作*/
+        }
+
+        #box-test1,
+        #box-test2,
+        #box-test3 {
+            /*3个id用逗号分开，样式对3个都管用*/
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #1e83e9;
+            /* 开始 */
+            box-sizing: border-box;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        /*可以再做一些补充修改*/
+
+        #box-test2{
+            border-color: red; /*border是一种组合写法，也能拆开写*/
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+        #box-test3 {
+            margin-left: 100px;
+        }
+    </style>
+    <div id="demo-box">
+        <div id="box-test1">1</div>
+        <div id="box-test2">2</div>
+        <div id="box-test3">3</div>
+    </div>
+
+
+    <!--这也是注释，这一行以下的代码都不用管-->
+    <hr />
+    <div class="info">
+        说明：熟悉这些样式，以后会经常使用到。
+    </div>
+    <div>
+        <b>
+            任务：
+        </b>
+        <ol>
+            <li>按F12，打开调试工具，观察各个元素，同时调试各个样式在起什么作用</li>
+            <li>复习一下之前学到的知识，下一节将使用现有知识，设计一个布局页面</li>
+        </ol>
+    </div>
+</body>
+
+</html>
