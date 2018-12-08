@@ -28,37 +28,29 @@
 
     <div class="info">默认定位(position:static)：就是同一层的块由上而下堆叠;外层的元素包裹内层的元素</div>
     <style>
-        #static1 {
+        #demo1 {
             background: red;
-            height: 100px;
+            height: 200px;
             margin-bottom: 10px;
         }
 
-        #static2 {
-            background: blue;
-            height: 100px;
-            padding: 10px;
-        }
 
-        #static2-1 {
+        #demo1-static1 {
             background: green;
             width:50%;
             height: 40px;
             margin-bottom: 10px;
         }
 
-        #static2-2 {
-            background: pink;
+        #demo1-static2 {
+            background: yellow;
             width:50%;
             height: 40px;
         }
     </style>
-    <div id="static1">
-        我是默认定位的第1个块
-    </div>
-    <div id="static2">
-        <div id="static2-1">1</div>
-        <div id="static2-2">2</div>
+    <div id="demo1">
+        <div id="demo1-static1"></div>
+        <div id="demo1-static2"></div>
     </div>
 
     <div class="info">相对定位(position:relative)：生成相对定位的元素，相对于其正常位置进行定位。</div>
@@ -79,7 +71,7 @@
             left:40px; 
             top:30px;
             /* 以上三行是上面#static2-2里所没有的，见第43行*/
-            background: pink;
+            background: yellow;
             width:50%;
             height: 40px;
         }
@@ -91,19 +83,56 @@
 
 
     <div class="info">绝对定位(position:absolute)：生成一个相对父元素（父元素需要设置relative）绝对定位的元素（这句话拗口，慢慢体会）。</div>
-
+    <style>
+        #demo3{
+            position: relative; /*注意：这里需要制定为relative或者absolute,子元素的absolute才会生效*/
+            background: red;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        #demo3-absolute1{
+            position: absolute;
+            left:30px;
+            top:30px;
+            width:30px;
+            height:30px;
+            background-color: black;
+        }
+        #demo3-absolute2{
+            position: absolute;
+            right:30px;
+            bottom:30px;
+            width:30px;
+            height:30px;
+            background-color: white;
+        }
+        #demo3-absolute3{
+            position: absolute;
+            left:200px;
+            top:50px;
+            bottom:50px;
+            right:200px;
+            background: green;
+        }
+        /*上面演示了绝对定位的几种写法，说白了就是告诉元素它的左边距、右边距、上边距、下边距、以及宽高，如果设置了左边距和宽度，那么系统会计算出右边距，所以可以忽略右边距，见 #demo3-absolute1。*/
+    </style>
+    <div id="demo3">
+        <div id="demo3-absolute1"></div>
+        <div id="demo3-absolute2"></div>
+        <div id="demo3-absolute3"></div>
+    </div>
     <!--这也是注释，这一行以下的代码都不用管-->
     <hr />
     <div class="info">
-        说明：布局就是让元素按照你的意愿去排列摆放。
+        说明：布局就是让元素按照你的意愿去排列摆放。一般情况用普通的定位去堆放元素，当普通摆放无法搞定时，再考虑绝对定位。
     </div>
     <div>
         <b>
             任务：
         </b>
         <ol>
-            <li>按F12，打开调试工具，观察各个元素</li>
-            <li>观察样式是如何生效的，为什么div2和div3样式是一样的</li>
+            <li>按F12，打开调试工具，观察各个元素，同时调试各个样式在起什么作用</li>
+            <li>回忆一下，到目前一共接触了多少样式，下一节将汇总演示常规的样式</li>
         </ol>
     </div>
 </body>
