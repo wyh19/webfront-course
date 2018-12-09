@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        从这里开始，接触js了
+    </div>
+    <button onclick="clickme()">点我</button>
+    <script>
+        var rootDiv = document.getElementById('root')
+        var text = rootDiv.innerHTML
+        alert(text)
+
+        function clickme(){
+            alert(text)
+        }
+        /*
+        * 不要被这些代码吓到，js需要长期学习，而且以后很少用js直接操作页面，所以你要关心的是js的语法和数据逻辑，而不是dom
+        */
+    </script>
+</body>
+
+</html>
