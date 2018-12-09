@@ -21,6 +21,7 @@
 
 <body>
     <div>之前零散地使用了一些简单的样式，这里汇总演示下。</div>
+    <div>注意，由于代码编辑器格式化的原因，很多对样式的注释都移到了下一行，请识别</div>
     <hr />
     <!--这是注释，这一行以上的代码都不用管-->
     <div class="info">文字相关</div>
@@ -73,16 +74,23 @@
             background-color: #1e83e9;
             /* 开始 */
             box-sizing: border-box;
+            /*盒模型，要么不设置，要设置就是这个*/
             border: 3px solid black;
+            /*边框*/
             border-radius: 5px;
+            /*圆角，越大越圆*/
             padding: 10px;
+            /*内边距*/
             margin: 10px;
+            /*外边距*/
         }
 
         /*编写各自单独的样式*/
-        #box-test1{
-            box-shadow: 5px 5px 5px #358; /*盒子阴影效果，!先不要求掌握，知道效果就行!*/
+        #box-test1 {
+            box-shadow: 5px 5px 5px #358;
+            /*盒子阴影效果，!先不要求掌握，知道效果就行!*/
         }
+
         #box-test2 {
             border-color: red;
             /*border是一种组合写法，也能拆开写border-width border-style border-color */
@@ -127,7 +135,10 @@
             /*以上样式都是为了绘制盒子的准备工作*/
         }
 
-        .box {
+        /*
+         * 注意：#demo-show > .box是一种样式写法，用于指定id为demo-show的盒子的子元素为box的，属于精确定位，防止干扰页面其他不想管的元素
+        */
+        #demo-show>.box {
             /* 一个元素可以指定多个样式，使用逗号隔开，比如下面的 box  show，这个元素就同时拥有两个样式的集合*/
             display: inline-block;
             vertical-align: top;
@@ -142,15 +153,15 @@
             margin: 10px;
         }
 
-        .show {
+        #demo-show>.show {
             /*普通的，什么样式也不加*/
         }
 
-        .hide {
+        #demo-show>.hide {
             display: none;
         }
 
-        .not-see {
+        #demo-show>.not-see {
             visibility: hidden;
         }
     </style>
@@ -173,7 +184,79 @@
         <!-- 思考:2和4不显示，是一样的效果吗？ -->
     </div>
 
+    <div class="info">背景</div>
+    <style>
+        #demo-bg {
+            box-sizing: border-box;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #1e83e9;
+            /* 准备这个背景色 */
+            /*以上样式都是为了绘制盒子的准备工作*/
+        }
 
+        #demo-bg>.box {
+            display: inline-block;
+            vertical-align: top;
+            width: 100px;
+            height: 100px;
+            /* 开始 */
+            box-sizing: border-box;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #demo-bg>.color {
+            background-color: #ffaa55;
+        }
+
+        #demo-bg>.alpha {
+            background-color: rgba(255, 255, 255, 0.5);
+            /*255,255,255实际上是白色，但是因为设置了50%的透明度，所以看到底部的蓝色，可以取消下一行注释试试效果*/
+            /* background-color:rgba(0,0,0,0.5); */
+        }
+
+        #demo-bg>.img1 {
+            color: white;
+            background-image: url(./image1.jpeg);
+            /*背景图片路径*/
+            background-position: 0 0;
+            /*图片的起点，一般是左上角*/
+            background-repeat: no-repeat;
+            /*当空间足够大时，是否重复显示图片*/
+            background-size: 100% 100%;
+            /*图片显示的尺寸,可以是百分比，也可以是像素值*/
+        }
+
+        #demo-bg>.img2 {
+            color: white;
+            width: 400px;
+            background-image: url(./image1.jpeg);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #demo-bg>.img3 {
+            color: white;
+            width: 400px;
+            background-image: url(./image1.jpeg);
+            background-position: 0 0;
+            /* background-repeat: no-repeat; */
+            background-size: 50px 50px;
+        }
+    </style>
+    <div id="demo-bg">
+        <div class="box color">背景色</div>
+        <div class="box alpha">透明度</div>
+        <div class="box img1">背景图片</div>
+        <div class="box img2">背景图片</div>
+        <div class="box img3">背景图片</div>
+    </div>
 
     <!--这也是注释，这一行以下的代码都不用管-->
     <hr />
