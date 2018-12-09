@@ -63,9 +63,11 @@
 
         #box-test1,
         #box-test2,
-        #box-test3 {
-            /*3个id用逗号分开，样式对3个都管用，一般写共性的样式；各自特性的样式，可以在任何地方单独写*/
+        #box-test3,
+        #box-test4 {
+            /*4个id用逗号分开，样式对4个都管用，一般写共性的样式；各自特性的样式，可以在任何地方单独写*/
             display: inline-block;
+            vertical-align: top;
             width: 100px;
             height: 100px;
             background-color: #1e83e9;
@@ -76,22 +78,104 @@
             padding: 10px;
             margin: 10px;
         }
+
         /*编写各自单独的样式*/
-        #box-test2{
-            border-color: red; /*border是一种组合写法，也能拆开写*/
+        #box-test1{
+            box-shadow: 5px 5px 5px #358; /*盒子阴影效果，!先不要求掌握，知道效果就行!*/
+        }
+        #box-test2 {
+            border-color: red;
+            /*border是一种组合写法，也能拆开写border-width border-style border-color */
             border-top-left-radius: 50px;
             border-bottom-left-radius: 50px;
         }
+
         #box-test3 {
             margin-left: 100px;
+            border-width: 2px;
+            border-style: dashed;
+        }
+
+        #box-test4 {
+            padding: 20px 10px 20px 10px;
+            /*分别padding和margin全部展开写的顺序是 上 右 下 左；当上下相同，左右相同时，可以写成下一行的形式*/
+            /* padding: 20px 10px;   */
+        }
+
+        #box-test4-child {
+            background-color: red;
+            width: 100%;
+            height: 100%;
         }
     </style>
     <div id="demo-box">
         <div id="box-test1">1</div>
         <div id="box-test2">2</div>
         <div id="box-test3">3</div>
+        <div id="box-test4">
+            <div id="box-test4-child"></div>
+        </div>
     </div>
-    <div class="info">未完，待续...</div>
+    <div class="info">隐藏-显示</div>
+    <style>
+        #demo-show {
+            box-sizing: border-box;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            /*以上样式都是为了绘制盒子的准备工作*/
+        }
+
+        .box {
+            /* 一个元素可以指定多个样式，使用逗号隔开，比如下面的 box  show，这个元素就同时拥有两个样式的集合*/
+            display: inline-block;
+            vertical-align: top;
+            width: 100px;
+            height: 100px;
+            background-color: #1e83e9;
+            /* 开始 */
+            box-sizing: border-box;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .show {
+            /*普通的，什么样式也不加*/
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .not-see {
+            visibility: hidden;
+        }
+
+        .alpha {}
+    </style>
+    <div id="demo-show">
+        <div class="box show">
+            1正常显示的元素
+        </div>
+        <div class="box hide">
+            2隐藏的元素
+        </div>
+        <div class="box show">
+            3正常显示的元素
+        </div>
+        <div class="box not-see">
+            4看不见的元素
+        </div>
+        <div class="box show">
+            5正常显示的元素
+        </div>
+        <!-- 思考:2和4不显示，是一样的效果吗？ -->
+    </div>
+
+
 
     <!--这也是注释，这一行以下的代码都不用管-->
     <hr />
