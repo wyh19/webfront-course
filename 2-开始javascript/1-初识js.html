@@ -14,11 +14,16 @@
     </div>
     <button onclick="clickme()">点我</button>
     <script>
+        //获取id为root的div元素
         var rootDiv = document.getElementById('root')
+        //获取元素里的内容，即包含在内的文字
         var text = rootDiv.innerHTML
+        //页面加载时，执行到下一句，将弹出一个消息框，alert就是浏览器内置的方法，用于弹出一个消息框
         alert(text)
 
+        //这里定义了一个方法，并在在button里引用了这个方法，当button被点击时，这个方法得到执行
         function clickme(){
+            //点击时，主动alert
             alert(text)
         }
         /*
