@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0 ;
+            margin:0;
+            /*浏览器默认给body有一个padding和margin的值，导致页面四周留有空白，所以要设置为0*/
+            font-size: 0;
+            /*为什么要设置font-size为0，这个很难解释，如果不设置为0，下面两个div会超出一行，还是当面解释吧。。*/
+        }
+
+        .head {
+            background-color: black;
+            height: 50px;
+            color:#fff;
+            font-size: 14px;
+        }
+        .left{
+            display:inline-block;
+            width:30%;
+            background: #38f;
+            height:500px;
+            font-size: 14px;
+        }
+        .content{
+            display:inline-block;
+            width:70%;
+            background: #ccc;
+            height:500px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        头部
+    </div>
+    <div class="left">
+        左侧，一般放置菜单
+    </div>
+    <div class="content">
+        内容区
+    </div>
+</body>
+
+</html>
