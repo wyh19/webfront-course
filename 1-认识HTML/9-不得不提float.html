@@ -7,53 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        html{
+            height:100%;
+        }
         body {
-            padding: 0 ;
-            margin:0;
+            padding: 0;
+            margin: 0;
+            height:100%;
             /*浏览器默认给body有一个padding和margin的值，导致页面四周留有空白，所以要设置为0*/
             font-size: 0;
             /*为什么要设置font-size为0，这个很难解释，如果不设置为0，下面两个div会超出一行，还是当面解释吧。。*/
         }
 
-        .head {
-            background-color: black;
-            height: 50px;
-            color:#fff;
-            font-size: 14px;
-        }
-        .left{
-            display:inline-block;
-            width:30%;
+        .left {
+            display: inline-block;
+            width: 30%;
             background: #38f;
-            height:500px;
+            height:  100%;
             font-size: 14px;
         }
-        .content{
-            display:inline-block;
-            width:70%;
+
+        .content {
+            display: inline-block;
+            width: 50%;
             background: #ccc;
-            height:500px;
+            height: 100%;
+            font-size: 14px;
+        }
+
+        .right {
+            display: inline-block;
+            width: 20%;
+            background: #f83;
+            height:  100%;
             font-size: 14px;
         }
     </style>
 </head>
 
 <body>
-    <!--品字布局是最常见的web系统的布局方式，有很多种形式，也就有很多种实现方式，这里演示最简单的一种，用于说明什么是品字布局，同时
-    也说明了inline-block的一个痛点，不得不在第九节引出float属性
-    -->
-    <div class="head">
-        头部
-    </div>
+
     <div class="left">
         左侧，一般放置菜单
     </div>
     <div class="content">
         内容区
     </div>
-    <!--
-        任务：找到我说的inline-bolck的痛点。提示，去掉body里字体为0的样式后试一试
-    -->
+    <div class="right">
+        右侧区
+    </div>
 </body>
 
 </html>
