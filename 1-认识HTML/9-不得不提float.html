@@ -7,31 +7,85 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-            .info {
-                padding: 5px 10px;
-                border-left: 4px solid #38f;
-                font-size: 14px;
-                margin: 30px 0 20px 0;
-            }
-            .demo-box{
-                border:1px solid #ccc;
-                padding:10px;
-            }
-        </style>
+        .info {
+            padding: 5px 10px;
+            border-left: 4px solid #38f;
+            font-size: 14px;
+            margin: 30px 0 20px 0;
+        }
+
+        .demo-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
-   <!--float给了我很多美好的回忆，最开始搞不定一些布局的时候，瞎用float居然都搞定了，但是现在我很少用float了，因为有更好的选择-->
-   <!--首先，我开始连块级元素和行内元素都不清楚，让两个div在一行都感觉无法搞定，直到我遇到float-->
+    <!--float给了我很多美好的回忆，最开始搞不定一些布局的时候，瞎用float居然都搞定了，但是现在我很少用float了，因为有更好的选择-->
+    <!--首先，我开始连块级元素和行内元素都不清楚，让两个div在一行都感觉无法搞定，直到我遇到float-->
+    <!--这一节有难度的话，需要当面解说-->
 
-   <div class="info">曾经的我,连div放一行都搞不定</div>
+    <div class="info">float最大的优点是很轻松使得两个块级元素放到了一行；float最大的痛点，就是父元素无法自动撑满高度</div>
     <div id="demo1" class="demo-box">
         <style>
-            
+            #demo1{
+                margin-bottom: 150px;
+            }
+            .demo1-float {
+                float: left;
+                width: 40%;
+                height: 100px;
+                margin: 5px 10px;
+                background: #38f;
+            }
         </style>
-        <div class="before">div1</div>
-        <div class="before">div2</div>
+        <div class="demo1-float">div1</div>
+        <div class="demo1-float">div2</div>
     </div>
+
+    <div class="info">解决痛点的办法就是清除浮动</div>
+    <div id="demo2" class="demo-box">
+        <style>
+            .demo2-float {
+                float: left;
+                width: 40%;
+                height: 100px;
+                margin: 5px 10px;
+                background: #38f;
+            }
+            .clearfix{
+                clear:both;
+            }
+        </style>
+        <div class="demo2-float">div1</div>
+        <div class="demo2-float">div2</div>
+        <div class="clearfix"></div>
+    </div>
+    <!--观察demo2，是不是没有demo1的问题了，但是需要在后面添加一个空的div，设置一个clear的样式-->
+
+    <div class="info">更优雅的解决办法</div>
+    <div id="demo3" class="demo-box">
+        <style>
+            #demo3::after{
+                display: block;
+                content:'';
+                clear:both;
+            }
+            .demo3-float {
+                float: left;
+                width: 40%;
+                height: 100px;
+                margin: 5px 10px;
+                background: #38f;
+            }
+        </style>
+        <div class="demo2-float">div1</div>
+        <div class="demo2-float">div2</div>
+    </div>
+    <!--为了不增加div，demo3使用了更优雅的解决办法，即伪类after，意思是在demo3这个元素内部末尾，增加一个类似demo2中的div-->
+
+
 </body>
 
 </html>
