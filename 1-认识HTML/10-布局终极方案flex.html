@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .info {
+            padding: 5px 10px;
+            border-left: 4px solid #38f;
+            font-size: 14px;
+            margin: 30px 0 20px 0;
+        }
+
+        .demo-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
+
 <body>
     <!--终于轮到我登场了，我一定会让你觉得眼前一亮的：）-->
-    
-
+    <!--display:flex；就是所谓的弹性布局，这是最近流行的布局方式，非常先进、智能、简单，唯一的缺点就是老的浏览器不怎么兼容
+    不过现在越来越不需要考虑老的浏览器了
+    -->
+    <div class="info">弹性布局一览</div>
+    <div id="demo0" class="demo-box">
+        <style>
+            #demo0{
+                display:flex;
+            }
+            .demo0-default {
+                width: 40%;
+                height: 100px;
+                margin: 5px 10px;
+                background: #38f;
+            }
+        </style>
+        <div class="demo0-default">div1</div>
+        <div class="demo0-default">div2</div>
+    </div>
+    <!--未完，待续-->
 </body>
+
 </html>
