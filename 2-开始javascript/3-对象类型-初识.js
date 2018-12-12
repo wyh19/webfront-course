@@ -23,15 +23,12 @@ console.log('-----------------')
  */
 console.log(myInfo.name)
 console.log(myInfo.age)
-console.log(myInfo.addr) //地址信息本身还是一个对象，可以继续取值
-
+console.log(myInfo.addr) 
 console.log('-----------------')
-
+//地址信息本身还是一个对象，可以继续取值
 console.log(myInfo.addr.city)
 console.log(myInfo.addr.street)
-
 console.log('-----------------')
-
 /**
  * js的对象是灵活的，当取一个不存在的信息时，不会报错，而是得到一个undefined
  */
