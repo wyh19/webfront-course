@@ -6,3 +6,4 @@ var arr_demo = [1,"abc",{a:1},[1,2,3]]
 console.log(arr_demo)
 
 //未完，待续...
+// 111
