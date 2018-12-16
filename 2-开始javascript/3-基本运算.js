@@ -64,4 +64,19 @@ console.log('"5" + 3 = '+plusDemo3)
   */
 
   var demo5 = str3 - num1
-  console.log(demo5)
+  console.log('"5" - 3 = '+demo5)
+  demo5 = str3 * num1
+  console.log('"5" * 3 = '+demo5)
+  demo5 = str3 / num1
+  console.log('"5" / 3 = '+demo5)
+  demo5 = str3 % num1
+  console.log('"5" % 3 = '+demo5)
+
+  /**
+   * demo6 ,运算量不可转化为数值，最后统一得到NaN这个特殊值
+   */
+  var demo6 = str1 - num1
+  console.log('"wyh" - 3 = '+demo6)
+  //其他自行练习
+
+ 
