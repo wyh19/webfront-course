@@ -48,6 +48,23 @@ for (var i = 0; i < arrDemo.length; i++) {
 }
 //是不是没那么绕了，但是我还是希望熟练掌握第一种写法，实际开发中，2层、3层循环是经常出现的，熟能生巧
 
+//拓展：下面的例子如果暂时有难度，先略过
+//回到上面的例子，printArr只支持普通数组，当面对数组里嵌套数组，就无能为力了，下面实现一个高级版的
+function printArrPlus(arr){
+    for(var i = 0;i<arr.length;i++){
+        if(Array.isArray(arr[i])){
+            printArrPlus(arr[i]) //调用自己，就是函数的递归调用
+        }else{
+            console.log(arr[i])
+        }
+    }
+}
+//测试这个函数
+console.log('------------分割线----------')
+var xxx_arr = [1,[2,3],[4,[5,[6,7]]]] //一个嵌套很多层的数组
+printArrPlus(xxx_arr)
+
+
 //之前的函数都是没有返回值的，下面演示一个有返回值的
 //输入一段字符串，得到这段字符串的倒序文字，同时都转化成大写
 function handleStr(text){
@@ -59,3 +76,15 @@ function handleStr(text){
 }
 var value = handleStr('wyh is a man')
 console.log(value)
+
+//当一个对象里有个属性是函数时，这个属性按习惯会被称为方法（本质就是函数，只是称呼变了）
+var wyhInfo = {
+    name:'wyh', //我是name属性，表示对象的一个信息
+    age:30,     //我是age属性
+    eat:function(food){  //我是eat属性，由于属性值是个函数，使用者会称呼我为eat方法
+        console.log('我在吃'+food)
+    }
+}
+
+wyhInfo.eat('鸡')
+//注意，当定义方法时，无需指定函数名称 

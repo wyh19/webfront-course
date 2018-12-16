@@ -79,4 +79,23 @@ console.log('"5" + 3 = '+plusDemo3)
   console.log('"wyh" - 3 = '+demo6)
   //其他自行练习
 
- 
+ // += -+ ++ --的使用
+ var demo6 = 5
+ //当要给demo6 加上3，正常是下面的写法
+ demo6 = demo6+3
+//使用 += 的写法是
+//先让demo6 = 5
+demo6 = 5
+demo6 += 3
+console.log( demo6)
+//当被+的值是1时,
+//先让demo6 = 5
+demo6 = 5
+console.log(++demo6)
+//先让demo6 = 5
+demo6 = 5
+console.log(demo6++)
+console.log(demo6)
+//发现没， ++ 在前面，是当场生效；++在后面，是下一行代码才生效，注意这点区别，在for循环中，一般见到的是 i++，主要是习惯问题写成++i也是可以的
+
+// -- -= 与 ++ +=类似，不再赘述

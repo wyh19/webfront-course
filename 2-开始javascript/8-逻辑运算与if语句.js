@@ -58,3 +58,19 @@ for (var i = 0; i < arr_demo.length; i++) {
         console.log(arr_demo[i])
     }
 }
+
+/**
+ * 三元表达式
+ * 很多if-else的代码体内就一句代码，因此有三元表达式这种便捷方式
+ */
+var demo = {
+    sex:1   //这在实际开发中很常见，很少数据库里保存男女，而是用1和2表示，那么在前端显示时需要做个判断转化
+}
+var showText
+if(demo.sex == 1){
+    showText = '男'
+}else{
+    showText = '女'
+}
+//简化后
+showText = (demo.sex == 1) ? "男":"女"

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--这个demo需要借助html的力量才能展示出来-->
+    <div>
+        <input id="textBox"/>
+        <button onclick="getValue()">点我</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        
+        /**
+         * web是需要和用户交互的，当用户触发了一些动作（比如点击了某个按钮），那么web需要执行相应的代码来响应这个动作，这个动作被称为事件
+         * 因此，需要给事件指定对应的响应代码
+         * 最常见的事件就是点击事件，比如按钮的onclick事件
+         * 绑定事件有好几种形式，由于vue和react都采用了在html中绑定的形式，因此，这里只介绍在html元素里绑定的形式
+         */
+        function getValue(){
+            var value = document.getElementById('textBox').value
+            var reversedValue = value.split('').reverse().join('')
+            var upperdValue = reversedValue.toUpperCase()
+            var _html = "<div>原始值："+value+"</div>"
+            _html += "<div>反转值："+reversedValue+"</div>"
+            _html += "<div>大写后："+upperdValue+"</div>"
+            var resultNode = document.getElementById('result')
+            resultNode.innerHTML = _html
+        }
+        //上面定义了一个getValue函数，该函数并没有被调用，而是在html的button里通过onclick属性进行了绑定，当
+        //用户点击了按钮，getValue函数才会被执行调用
+    </script>
+</body>
+</html>
