@@ -18,22 +18,22 @@ var str3 = '5'
   * demo1,数值+数值
   */
  var plusDemo1 = num1 + num2 
- console.log(plusDemo1)
+ console.log('3 + 7 = '+plusDemo1)
 
  /**
   * demo2,字符串+字符串
   */
  var plusDemo2 = str1 +str2
- console.log(plusDemo2)
+ console.log('"wyh" + "nba" = '+plusDemo2)
 
 /**
  * demo3,字符串+数值
  */
 var plusDemo3 = str1 +num1
-console.log(plusDemo3)
+console.log('"wyh" + 3 = '+plusDemo3)
 //继续演示(str3是个数字内容的字符串)
 plusDemo3 = str3 + num1
-console.log(plusDemo3)
+console.log('"5" + 3 = '+plusDemo3)
 
 /**
  * 结论：
@@ -51,13 +51,13 @@ console.log(plusDemo3)
   * demo4,正常数值运算
   */
  var demo4 = num1 - num2
- console.log(demo4)
+ console.log('3 - 7 = '+demo4)
  demo4 = num1 * num2
- console.log(demo4)
+ console.log('3 * 7 = '+demo4)
  demo4 = num2 / num1
- console.log(demo4)
+ console.log('7 / 3 = '+demo4)
  demo4 = num2 % num1
- console.log(demo4)
+ console.log('7 % 3 = '+demo4)
 
  /**
   * demo5, 运算量可以转化成数值
