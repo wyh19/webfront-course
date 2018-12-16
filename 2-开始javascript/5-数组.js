@@ -5,5 +5,42 @@
 var arr_demo = [1,"abc",{a:1},[1,2,3]]
 console.log(arr_demo)
 
-//未完，待续...
-// 111
+/**
+ * 判断一个对象是不是数组，最简单的办法就是使用Array.isArray(arr_demo)方法
+ * 返回true即代表对象是数组
+ */
+console.log(Array.isArray(arr_demo))
+//Array是系统内置的对象，如果说Array是一个类的话，那么arr_demo是Array的一个实例
+//上面这句话，如果接触过面向对象的语言，比如java，是很好理解的
+//如果没有接触过，也不用担心，先忽略这个问题，后续会有详细介绍
+
+
+
+/**
+ * 获取数组中元素，是通过下标（索引）的方式
+ * 注意，大多数编程语言，索引是从0开始的，所以下面的例子，获取的是第3个元素（即{a:1}这个对象）
+ */
+console.log(arr_demo[2])
+
+/**
+ * 数组有个length属性，表示里面的元素个数
+ */
+console.log(arr_demo.length)
+
+/**
+ * 往数组末尾追加一个元素，使用数组对象的push方法
+ * 这里只介绍追加方法，数组还有删除、从头部增加，从头部删除等方法，使用较少，前期无需学习
+ */
+arr_demo.push('wyh19')
+console.log(arr_demo)
+console.log('追加后的长度:'+arr_demo.length)
+
+/**
+ * 数组使用最多的场景就是遍历内部的元素，因此需要掌握for循环的用法，这个将在后面介绍
+ */
+
+ /**
+  * isArray方法是Array的，而push方法是arr_demo(即数组对象实例)的，是不是有点担心搞不清
+  * 其实不用担心，js中大部分方法都是对象里的，即上例中arr_demo.push的使用形式
+  * 极少数方法设计的像isArray那样，接触多了就司空见惯了，而且我们有智能提示，初学者不用担心
+  */
