@@ -38,13 +38,13 @@ console.log(undefined_demo)
 console.log('----分割线------')
 
 //对各个变量类型求值
-console.log(typeof(num_demo))
-console.log(typeof(str_demo1))
-console.log(typeof(str_demo2))
-console.log(typeof(bool_demo1))
-console.log(typeof(bool_demo2))
-console.log(typeof(null_demo)) //这个应该是null类型才对，但是因为历史遗留问题，js语法已经无法挽回这个错误了
-console.log(typeof(undefined_demo))
+console.log(typeof('1的类型是'+num_demo))
+console.log(typeof('"1"的类型是'+str_demo1))
+console.log(typeof('"Hello World"的类型是'+str_demo2))
+console.log(typeof('true的类型是'+bool_demo1))
+console.log(typeof('false的类型是'+bool_demo2))
+console.log(typeof('null的类型是'+null_demo)) //这个应该是null类型才对，但是因为历史遗留问题，js语法已经无法挽回这个错误了
+console.log(typeof('undefined的类型是'+undefined_demo))
 
 //变量a赋值给变量b
 var a = 1
