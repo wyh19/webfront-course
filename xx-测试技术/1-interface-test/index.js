@@ -12,7 +12,7 @@ var getSkillListUrl = '/manage/v1/skill/list'
 
 axios.get(baseUrl+getSkillListUrl).then(res =>{
      console.log(res.data)
-     console.log('------json对象转字符串------')
+     console.log('------json对象转字符串，便于打印显示------')
      console.log(JSON.stringify(res.data))
  })
 
