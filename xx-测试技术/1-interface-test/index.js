@@ -45,3 +45,12 @@ axios.get(baseUrl + getSkillListUrl, { params: params }).then(res => {
 //注意:上面的  axios.get(baseUrl + getSkillListUrl, { params: params })
 //可以写成     axios.get(baseUrl + getSkillListUrl, { params })
 //当对象里的 key名称和value的变量同名时，可以简写
+
+/**
+ * 接口3：提交数据
+ * 请求方式：POST
+ * 请求参数：
+ */
+
+ //暂未找到合适的post接口，先演示代码形式,和get几乎一样，只是方法由get变成了post
+//  axios.post(url,data).then(res => {})
