@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--通过上面这句话，引入vue库文件-->
+</head>
+<body>
+    <div id="demo1">
+        <div>名字: {{name}}</div>
+        <div>年龄: {{age}}</div>
+        <div>城市: {{addr.city}}</div>
+        <div>街道: {{addr.street}}</div>
+    </div>
+    <script>
+        //如果对 new 这个操作符不明白，先不用担心
+        new Vue({
+            el:'#demo1',
+            data:{
+                name:'wyh',
+                age:30,
+                addr:{
+                    city:'北京',
+                    street:'常营南路'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
