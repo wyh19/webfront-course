@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,24 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--通过上面这句话，引入vue库文件-->
+    <style>
+        /* 这些样式不用关心，主要是为了让demo更整齐一些 */
+        .demo{
+            position: relative;
+            margin: 20px 0;
+        }
+        .demo::before{
+            display:block;
+            content:attr(demo-name);
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #38f;
+        }
+    </style>
 </head>
+
 <body>
-    <div id="demo1">
+    <div id="demo1" class="demo" demo-name="demo1:data进行数据绑定">
         <div>名字: {{name}}</div>
         <div>年龄: {{age}}</div>
         <div>城市: {{addr.city}}</div>
@@ -17,17 +33,57 @@
     </div>
     <script>
         //如果对 new 这个操作符不明白，先不用担心
-        new Vue({
-            el:'#demo1',
-            data:{
-                name:'wyh',
-                age:30,
-                addr:{
-                    city:'北京',
-                    street:'常营南路'
+        var demo1 = new Vue({
+            el: '#demo1', //这个属性指定vue对哪个div进行处理
+            data: {
+                name: 'wyh',
+                age: 30,
+                addr: {
+                    city: '北京',
+                    street: '常营南路'
+                }
+            }
+        })
+        /**
+         * 这个例子就是演示如何通过vue来绑定数据
+         * 记住和熟悉使用形式即可，目前无需理解原理，vue在背后帮你做了大量的工作，你要成为vue的用户即可
+         * 任务：浏览器按F12，进入console面板，输入 demo1.name = 'wyh19' ,回车查看效果
+         */
+    </script>
+
+    <!--上面的例子只是将js数据显示到html中，下面演示更多的交互乐趣，还记得2-开始javascript/12-事件绑定.html吗
+        现在将使用vue来改造一下
+    -->
+    <div id="demo2" class="demo" demo-name="demo2:methods里绑定事件处理">
+        <input placeholder="请输入几个英文字符" v-model="text" />
+        <button v-on:click="getValue">点我</button>
+        <p id="result">
+            <div>原始数据：{{originText}}</div>
+            <div>反转后：{{reversedText}}</div>
+            <div>大写后：{{uppercasedText}}</div>
+        </p>
+    </div>
+    <script>
+        var demo2 = new Vue({
+            el: '#demo2', //这个属性指定vue对哪个div进行处理
+            data: {
+                text: '',
+                originText: '',
+                reversedText: '',
+                uppercasedText: ''
+            },
+            methods: {
+                getValue: function () {
+                    this.originText = this.text
+                    this.reversedText = this.originText.split('').reverse().join('')
+                    this.uppercasedText = this.reversedText.toUpperCase()
                 }
             }
         })
     </script>
+    <!--是不是比之前的简单很多，不要被vue的代码吓到，也许你不理解为什么（其实很多人都不理解，但是要熟悉会用），
+        一旦熟悉了vue的用法，你能享受到vue带来的前端乐趣-->
+
 </body>
+
 </html>
