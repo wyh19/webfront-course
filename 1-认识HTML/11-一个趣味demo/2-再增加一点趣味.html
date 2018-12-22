@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!--今天用之前介绍过的知识，动手做个有趣的页面，后续会分步讲解，先看效果-->
     <style>
         .phone-wrapper {
             position: relative;
@@ -23,17 +22,20 @@
             /* 之前有提过，就是阴影效果，该效果不会影响盒子的大小和布局，只是画了个小妆 */
             box-shadow: 5px 5px 5px 3px #868583;
         }
+
         /* :hover 就是鼠标移上去后的附加样式，非常非常常用*/
-        .phone-wrapper:hover{
+        .phone-wrapper:hover {
             box-shadow: 5px 5px 5px 5px #868583;
         }
 
         .screen {
             position: relative;
+            box-sizing: border-box;
             background: rgba(0, 0, 0, .8);
             width: 100%;
             height: 100%;
             border-radius: 3px;
+            padding: 2px;
         }
 
         .home {
@@ -49,41 +51,45 @@
             box-shadow: 0 0 2px 2px inset #989189;
             cursor: pointer;
         }
+
         /*这一下代码就是为了实现头部3个小组件，不喜欢可以删掉：）*/
-        .head{
+        .head {
             position: absolute;
-            left:0;
-            right:0;
-            top:0;
-            height:50px;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 50px;
         }
-        .light{
+
+        .light {
             position: absolute;
-            width:10px;
-            height:10px;
-            top:8px;
-            left:50%;
+            width: 10px;
+            height: 10px;
+            top: 8px;
+            left: 50%;
             transform: translate(-50%, 0);
             border-radius: 10px;
-            box-shadow: 0 0 4px 4px inset  rgba(0,0,0,.9);
+            box-shadow: 0 0 4px 4px inset rgba(0, 0, 0, .9);
         }
-        .front{
+
+        .front {
             position: absolute;
-            width:13px;
-            height:13px;
-            top:20px;
-            left:33%;
+            width: 13px;
+            height: 13px;
+            top: 20px;
+            left: 33%;
             border-radius: 14px;
-            box-shadow: 0 0 6px 6px inset rgba(0,0,0,.9);
+            box-shadow: 0 0 6px 6px inset rgba(0, 0, 0, .9);
         }
-        .voice{
+
+        .voice {
             position: absolute;
-            width:60px;
-            height:5px;
-            top:25px;
-            left:41%;
+            width: 60px;
+            height: 5px;
+            top: 25px;
+            left: 41%;
             border-radius: 5px;
-            background-color: rgba(0,0,0,.7);
+            background-color: rgba(0, 0, 0, .7);
         }
     </style>
     <div class="phone-wrapper">
@@ -92,14 +98,22 @@
             <div class="front"></div>
             <div class="voice"></div>
         </div>
-        <div class="screen"></div>
+        <div class="screen">
+            <!--这一行以上的全是上一节的代码，不要去动他们-->
+            <style>
+                .content{
+                    width:100%;
+                    height:100%;
+                    background: #fff;
+                }
+            </style>
+            <div class="content">
+
+            </div>
+            <!--这一行以下的全是上一节的代码，不要去动他们-->
+        </div>
         <div class="home"></div>
     </div>
-    <!--是不是很简单，几十行简单的代码就实现一个iphone的模型-->
-    <!--
-        而且都是之前讲过的知识，赶紧自己动手做一个吧，如果觉得有难度，下面几节将是分步讲解
-        但是，我觉得做成这样完全不过瘾，再优化一下
-    -->
 </body>
 
 </html>
