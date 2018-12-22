@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!--今天用之前介绍过的知识，动手做个有趣的页面，后续会分步讲解，先看效果-->
     <style>
         .phone-wrapper {
             position: relative;
@@ -19,8 +20,10 @@
             height: 560px;
             border: 2px solid #aaa;
             border-radius: 26px;
+            /* 之前有提过，就是阴影效果，该效果不会影响盒子的大小和布局，只是画了个小妆 */
             box-shadow: 5px 5px 5px 3px #868583;
         }
+        /* :hover 就是鼠标移上去后的附加样式，非常非常常用*/
         .phone-wrapper:hover{
             box-shadow: 5px 5px 5px 5px #868583;
         }
@@ -39,6 +42,7 @@
             bottom: 10px;
             width: 46px;
             height: 46px;
+            /* 这个是为了让home键真正居中，暂时不解释，照着用即可*/
             transform: translate(-50%, 0);
             border: 1px solid #989189;
             border-radius: 50px;
@@ -88,14 +92,14 @@
             <div class="front"></div>
             <div class="voice"></div>
         </div>
-        <div class="screen">
-
-        </div>
-        <div class="home">
-
-        </div>
+        <div class="screen"></div>
+        <div class="home"></div>
     </div>
-    <!--是不是很简单，几十行代码实现一个iphone的模型-->
+    <!--是不是很简单，几十行简单的代码就实现一个iphone的模型-->
+    <!--
+        而且都是之前讲过的知识，赶紧自己动手做一个吧，如果觉得有难度，下面几节将是分步讲解
+        但是，我觉得做成这样完全不过瘾，再优化一下
+    -->
 </body>
 
 </html>
