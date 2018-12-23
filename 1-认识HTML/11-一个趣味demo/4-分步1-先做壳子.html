@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--今天开始分步讲解前面做的3个demo,为了便于演示，
+        我将屏幕分成了多块，按从左到右，从上到下的顺序演示
+    -->
+    <style>
+        /*这只是用来划出一个格子作为演示*/
+        .demo-box {
+            display: inline-block;
+            width: 420px;
+            height: 660px;
+            border: 1px dashed #38f;
+            margin: 10px;
+        }
+    </style>
+    <div id="demo1" class="demo-box">
+        1、
+        <!--注意：由于每个手机样式的class都一样，所以需要用id>class的模式强制指定，
+            如下面的#demo1>.phone-wrapper，只是为了不干扰其他demo
+            实际使用中只需要写.phone-wrapper即可
+        -->
+        <!--1、设置宽高、以及外边线
+        -->
+        <style>
+            #demo1>.phone-wrapper {
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+            }
+        </style>
+        <div class="phone-wrapper"></div>
+    </div>
+
+    <div id="demo2" class="demo-box">
+        2、
+        <!--
+                1、给外壳增加外边距(margin)，防止紧贴左侧
+                2、增加圆角效果
+                3、增加外部阴影效果
+            -->
+        <style>
+            #demo2>.phone-wrapper {
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+            }
+        </style>
+        <div class="phone-wrapper"></div>
+    </div>
+
+    <div id="demo3" class="demo-box">
+        3、
+        <!--
+            给外壳增加一个鼠标移上去的状态，即hover
+        -->
+        <style>
+            #demo3>.phone-wrapper {
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+            }
+            #demo3>.phone-wrapper:hover{
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+        </style>
+        <div class="phone-wrapper"></div>
+    </div>
+
+    <!--先这么多，下一节会接着最下面的代码写-->
+
+</body>
+
+</html>
