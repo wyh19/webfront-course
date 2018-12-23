@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--这一节实现手机内部的头部、屏幕、home键3个布局
+    -->
+    <style>
+        /*这只是用来划出一个格子作为演示*/
+        .demo-box {
+            display: inline-block;
+            width: 420px;
+            height: 660px;
+            border: 1px dashed #38f;
+            margin: 10px;
+            margin-bottom: 80px;
+            vertical-align: top;
+        }
+    </style>
+
+
+    <div id="demo1" class="demo-box">
+        <!--其实你就是上一节的demo3,小样，换个名字就不认识你了吗😀-->
+        1、
+        <!--
+            给 <div class="phone-wrapper"> 增加3个div,分别是 头部、屏幕、home，定义class命名
+        -->
+        <style>
+            #demo1>.phone-wrapper {
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+            }
+
+            #demo1>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+        </style>
+        <div class="phone-wrapper">
+            <div class="head">头部</div>
+            <div class="screen">屏幕</div>
+            <div class="home">home</div>
+            <!--由于没样式，加文字衬一下，下面将去掉文字-->
+        </div>
+    </div>
+
+    <!--
+        这里介绍一种我常用的布局技巧，就是父容器设置上下padding,使得上下留出不可用空间，
+        然后使内部核心元素占满父容器的可用空间（即设置高度100%），
+        将次要元素通过绝对定位放置在父元素不可用空间
+    -->
+    <div id="demo2" class="demo-box">
+        2、
+        <!--
+                给 <div class="phone-wrapper"> 增加3个div,分别是 头部、屏幕、home，定义class命名
+            -->
+        <style>
+            #demo2>.phone-wrapper {
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+                /*这个demo增加了内部定，使得父容器有一些不可使用的空间，为了美观（左右的16px），更为了布局（上50下70）*/
+                padding: 50px 16px 70px 16px;
+            }
+
+            #demo2>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+
+            /*这里又出现一个之前没介绍的选择器，跟上面比，是空格替代了>,
+            如果说有>标识后面是前面的儿子的话，那么空格标识孙子或者重（多个重）孙子😅*/
+            #demo2 .screen {
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+            }
+        </style>
+        <div class="phone-wrapper">
+            <div class="head"></div>
+            <div class="screen"></div>
+            <div class="home"></div>
+        </div>
+        <!--有没有发现问题，手机变大了，思考下为什么，怎么解决？-->
+    </div>
+
+    <div id="demo3" class="demo-box">
+        3、
+        <!--
+            1、修正因为添加padding导致的外壳变大，就是添加box-sizing属性
+            tips:以后凡是设置了padding和border的盒子，都记得设置这个属性，保证不出错
+            2、设置home键，显然home键需要绝对定位,记得之前提过吧，子元素设置position: absolute时，父元素需要设置relative
+            所以，给.phone-wrapper增加position:relative
+         -->
+        <style>
+            #demo3>.phone-wrapper {
+                /*注意，这一行是这个demo刚加的*/
+                position: relative;
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+                /*这个demo增加了内部定，使得父容器有一些不可使用的空间，为了美观（左右的16px），更为了布局（上50下70）*/
+                padding: 50px 16px 70px 16px;
+                box-sizing: border-box;
+            }
+
+            #demo3>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+
+            /*这里又出现一个之前没介绍的选择器，跟上面比，是空格替代了>,
+                如果说有>标识后面是前面的儿子的话，那么空格标识孙子或者重（多个重）孙子😅*/
+            #demo3 .screen {
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+            }
+
+            #demo3 .home {
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+                width: 46px;
+                height: 46px;
+                border: 1px solid #989189;
+                border-radius: 50px;
+            }
+        </style>
+        <div class="phone-wrapper">
+            <div class="head"></div>
+            <div class="screen"></div>
+            <div class="home"></div>
+        </div>
+    </div>
+
+    <div id="demo4" class="demo-box">
+        4、
+        <!--
+                home键并不居中，而且不好看,直接看home样式里添加的3行代码
+             -->
+        <style>
+            #demo4>.phone-wrapper {
+                /*注意，这一行是这个demo刚加的*/
+                position: relative;
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+                /*这个demo增加了内部定，使得父容器有一些不可使用的空间，为了美观（左右的16px），更为了布局（上50下70）*/
+                padding: 50px 16px 70px 16px;
+                box-sizing: border-box;
+            }
+
+            #demo4>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+
+            /*这里又出现一个之前没介绍的选择器，跟上面比，是空格替代了>,
+                    如果说有>标识后面是前面的儿子的话，那么空格标识孙子或者重（多个重）孙子😅*/
+            #demo4 .screen {
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+            }
+
+            #demo4 .home {
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+                width: 46px;
+                height: 46px;
+                border: 1px solid #989189;
+                border-radius: 50px;
+                /*往左边移动自身一半宽度*/
+                transform: translate(-50%, 0);
+                /*通过阴影，增加按钮质感*/
+                box-shadow: 0 0 2px 2px inset #989189;
+                /*鼠标变成手型，很常用，记住*/
+                cursor: pointer;
+            }
+        </style>
+        <div class="phone-wrapper">
+            <div class="head"></div>
+            <div class="screen"></div>
+            <div class="home"></div>
+        </div>
+    </div>
+
+    <div id="demo5" class="demo-box">
+        5、
+        <!--
+                   将头部通过绝对定位放到头部（这一节不实现里面的前置摄像头），
+                 -->
+        <style>
+            #demo5>.phone-wrapper {
+                /*注意，这一行是这个demo刚加的*/
+                position: relative;
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                /*阴影只是化妆，不会影响大小和布局，不要问我下面的5 5 5 1是什么鬼😆，先照着写即可，我也是现查现用的😅*/
+                box-shadow: 5px 5px 5px 1px #868583;
+                /*这个demo增加了内部定，使得父容器有一些不可使用的空间，为了美观（左右的16px），更为了布局（上50下70）*/
+                padding: 50px 16px 70px 16px;
+                box-sizing: border-box;
+            }
+
+            #demo5>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+
+            /*这里又出现一个之前没介绍的选择器，跟上面比，是空格替代了>,
+                        如果说有>标识后面是前面的儿子的话，那么空格标识孙子或者重（多个重）孙子😅*/
+            #demo5 .screen {
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+            }
+
+            #demo5 .home {
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+                width: 46px;
+                height: 46px;
+                border: 1px solid #989189;
+                border-radius: 50px;
+                /*往左边移动自身一半宽度*/
+                transform: translate(-50%, 0);
+                /*通过阴影，增加按钮质感*/
+                box-shadow: 0 0 2px 2px inset #989189;
+                /*鼠标变成手型，很常用，记住*/
+                cursor: pointer;
+            }
+
+            #demo5 .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+                /*这里设置黄色只是为了让你看到这个头部块，下一节将去掉*/
+                background-color: yellow;
+            }
+        </style>
+        <div class="phone-wrapper">
+            <div class="head"></div>
+            <div class="screen"></div>
+            <div class="home"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
