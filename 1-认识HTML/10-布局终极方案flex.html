@@ -29,9 +29,10 @@
     <div class="info">弹性布局一览</div>
     <div id="demo0" class="demo-box">
         <style>
-            #demo0{
-                display:flex;
+            #demo0 {
+                display: flex;
             }
+
             .demo0-default {
                 width: 40%;
                 height: 100px;
@@ -43,10 +44,60 @@
         <div class="demo0-default">div2</div>
         <!--也许你会觉得没什么了不起，但是这确实是比float:left或者display:inline-block更少代码-->
     </div>
-   <!--其实flex布局我用的最多的就是让一些小零件在一行，且垂直居中，看下面的示例，是没用flex的--> 
-    
 
-    
+    <!--其实flex布局我用的最多的就是让一些小零件在一行，且垂直居中，看下面的示例，是没用flex的-->
+    <div class="info">为什么要用?先看下不用的例子</div>
+    <div id="demo1" class="demo-box">
+        <div>
+            <label>名称</label>
+            <div style="display:inline-block;width:50px;height:50px;background: chartreuse;" ></div>
+            <a>adasd</a>
+            <button>查询</button>
+        </div>
+        <!--如果让你把元素垂直居中对齐，是不是感觉很困难？幸好，我们有个flex布局这个神技😆，看下面怎么实现这个需求-->
+    </div>
+
+    <div class="info">对demo1进行垂直居中对齐</div>
+    <div id="demo2" class="demo-box">
+        <style>
+        #demo2-flex{
+            display:flex;
+            align-items: center;
+        }
+        </style>
+        <!--bingo,就加了2句样式，第一句是使用弹性盒子，第二句是盒子内元素垂直居中，这个将非常常用-->
+        <div id="demo2-flex">
+            <label>名称</label>
+            <div style="display:inline-block;width:50px;height:50px;background: chartreuse;" ></div>
+            <a>adasd</a>
+            <button>查询</button>
+        </div>
+        <!--下面再介绍flex常用的一些属性-->
+    </div>
+
+    <div class="info">对demo2增加水平居中</div>
+    <div id="demo3" class="demo-box">
+        <style>
+        #demo3-flex{
+            display:flex;
+            align-items: center;
+            justify-content: center; 
+            /*justify-content还有两个常用的值，解除下面的注释依次尝试效果*/
+            /* justify-content: space-between;  */
+            /* justify-content: space-around;  */
+        }
+        </style>
+        <!--bingo,就加了2句样式，第一句是使用弹性盒子，第二句是盒子内元素垂直居中，这个将非常常用-->
+        <div id="demo3-flex">
+            <label>名称</label>
+            <div style="display:inline-block;width:50px;height:50px;background: chartreuse;" ></div>
+            <a>adasd</a>
+            <button>查询</button>
+        </div>
+    </div>
+
+    <!--先学习这么多吧，后面有用到其他，到时候再介绍-->
+
 </body>
 
 </html>
