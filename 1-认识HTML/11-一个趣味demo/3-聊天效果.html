@@ -105,57 +105,192 @@
                 .chat-window {
                     position: relative;
                     box-sizing: border-box;
-                    background-color: #f5f5f5;
+                    background-color: #f0f0f0;
                     height: 100%;
-                    padding-bottom: 50px;
-                }
-
-                .chat-content {
-                    position: relative;
-                    box-sizing: border-box;
-                    height: 100%;
-                    padding: 12px;
-                    overflow-y: auto;
+                    padding: 50px 0 40px 0;
                 }
             </style>
             <div class="chat-window">
-                <div class="chat-content">
-                    <div class="msg-item">
-                        <div class="from-me">
-                            <!--没写完，待续-->
-                        </div>
-                    </div>
+                <div class="head-bar">
+                    <style>
+                        .head-bar {
+                            position: absolute;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 50px;
+                            background: rgba(0, 0, 0, .8);
+                            color: #fff;
+                            padding: 0 10px;
+                        }
+
+                        .back {
+                            font-size: 13px;
+                        }
+
+                        .chat-name {
+                            font-size: 18px;
+                        }
+
+                        .more {
+                            font-size: 15px;
+                            font-weight: 1000;
+                        }
+                    </style>
+                    <div class="back">返回</div>
+                    <div class="chat-name">wyh19</div>
+                    <div class="more">···</div>
                 </div>
-                <style>
-                    .foot-bar {
-                        position: absolute;
-                        display: flex;
-                        align-items: center;
-                        background: #f0f0f0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        height: 40px;
-                        border-top: 1px solid #d9d9d9;
-                    }
+                <div class="chat-content">
+                    <style>
+                        .chat-content {
+                            position: relative;
+                            box-sizing: border-box;
+                            height: 100%;
+                            padding: 6px;
+                            overflow-y: auto;
+                        }
 
-                    .foot-bar>input {
-                        flex: 1 1 100%;
-                        border: none;
-                        border-radius: 5px;
-                        background: #fff;
-                        height: 28px;
-                    }
+                        .msg-item {
+                            position: relative;
+                            margin: 12px 0;
+                        }
 
-                    .foot-bar>.icon {
-                        flex: 0 0 20px;
-                        margin: 0 8px;
-                        height: 20px;
-                        border-radius: 20px;
-                        border: 1px solid #d9d9d9;
-                    }
-                </style>
+                        .msg-item::after {
+                            display: block;
+                            content: '';
+                            clear: both;
+                        }
+
+                        .msg {
+                            position: relative;
+                            font-size: 13px;
+                            padding: 5px 8px;
+                            border-radius: 5px;
+                            overflow-wrap: break-word;
+                        }
+
+                        .msg-me {
+                            float: right;
+                            margin-right: 40px;
+                            background-color: #B2E281;
+                        }
+
+                        .msg-me::after {
+                            position: absolute;
+                            content: '';
+                            top: 8px;
+                            right: -12px;
+                            width: 0;
+                            height: 0;
+                            border: 6px solid transparent;
+                            border-left-color: #B2E281;
+                        }
+
+                        .msg-other {
+                            float: left;
+                            margin-left: 40px;
+                            background-color: #fff;
+                        }
+                        .msg-other::after {
+                            position: absolute;
+                            content: '';
+                            top: 8px;
+                            left: -12px;
+                            width: 0;
+                            height: 0;
+                            border: 6px solid transparent;
+                            border-right-color: #fff;
+                        }
+
+                        .avatar {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 2px;
+                        }
+
+                        .avatar-me {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+
+                        .avatar-other {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                    </style>
+                    <div class="msg-item">
+                        <div class="msg msg-me ">你好。</div>
+                        <img class="avatar avatar-me" src="./avatar.png" />
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg msg-other ">你也好。</div>
+                        <img class="avatar avatar-other" src="./wechat.png" />
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg msg-me ">测试说一句很长很长的话，风到这里就是粘
+                            粘住过客的思念
+                            雨到了这里缠成线
+                            缠着我们流连人世间</div>
+                        <img class="avatar avatar-me" src="./avatar.png" />
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg msg-other ">我也回一句很长很长的话，微笑再美再甜不是你的都不特别...</div>
+                        <img class="avatar avatar-other" src="./wechat.png" />
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg msg-me ">😅</div>
+                        <img class="avatar avatar-me" src="./avatar.png" />
+                    </div>
+                    <div class="msg-item">
+                            <div class="msg msg-me ">测试一下滚动条，
+                                风到这里就是粘
+                                粘住过客的思念
+                                雨到了这里缠成线
+                                缠着我们流连人世间</div>
+                            <img class="avatar avatar-me" src="./avatar.png" />
+                        </div>
+                </div>
+                <div class="msg-item">
+                        <div class="msg msg-other ">好的</div>
+                        <img class="avatar avatar-other" src="./wechat.png" />
+                    </div>
                 <div class="foot-bar">
+                    <style>
+                        .foot-bar {
+                            position: absolute;
+                            display: flex;
+                            box-sizing: border-box;
+                            align-items: center;
+                            background: #f0f0f0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            height: 40px;
+                            border-top: 1px solid #d9d9d9;
+                        }
+
+                        .foot-bar>input {
+                            flex: 1 1 100%;
+                            border: none;
+                            border-radius: 5px;
+                            background: #fff;
+                            height: 28px;
+                        }
+
+                        .foot-bar>.icon {
+                            flex: 0 0 20px;
+                            margin: 0 8px;
+                            height: 20px;
+                            border-radius: 20px;
+                            border: 1px solid #d9d9d9;
+                        }
+                    </style>
                     <div class="icon"></div>
                     <input />
                     <div class="icon"></div>
