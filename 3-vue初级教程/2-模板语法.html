@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--通过上面这句话，引入vue库文件-->
+    <style>
+        /* 这些样式不用关心，主要是为了让demo更整齐一些 */
+        .demo {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .demo::before {
+            display: block;
+            content: attr(demo-name);
+            /*通过content属性，显示div中demo-name中的问题，是个技巧*/
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #38f;
+        }
+    </style>
+</head>
+
+<body>
+    <!--vue是一个前端框架，那么它就有自己的规则，这里介绍它的模板语法
+    通过模板语法，可以轻松的绑定数据，前面介绍的{{}}是最基本的一个
+    -->
+</body>
+
+</html>
