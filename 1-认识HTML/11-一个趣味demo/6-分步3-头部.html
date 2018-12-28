@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--这一节实现上一节遗留的手机头部的实现（上一节demo5黄色区块），
+        由于其他代码影响阅读，这里先实现头部，最后组装到手机中去
+    -->
+    <style>
+        /*这只是用来划出一个格子作为演示*/
+        .demo-box {
+            position: relative;
+            display: inline-block;
+            width: 420px;
+            height: 660px;
+            border: 1px dashed #38f;
+            margin: 10px;
+            margin-bottom: 80px;
+            vertical-align: top;
+        }
+    </style>
+
+    <div id="demo1" class="demo-box">
+        <style>
+            #demo1 .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+                /*这里设置黄色只是为了让你看到这个头部块，下一节将去掉*/
+                background-color: yellow;
+            }
+        </style>
+        <div class="head">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
