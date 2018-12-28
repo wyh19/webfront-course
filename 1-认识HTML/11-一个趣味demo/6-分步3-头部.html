@@ -34,15 +34,367 @@
                 right: 0;
                 top: 0;
                 height: 50px;
-                /*这里设置黄色只是为了让你看到这个头部块，下一节将去掉*/
                 background-color: yellow;
             }
         </style>
         <div class="head">
-
+            <!--里面是3个元素，所以放置3个div,并分别指定class-->
+            <div class="light">光线采集器</div>
+            <div class="front">前置摄像头</div>
+            <div class="voice">小喇叭</div>
+            <!--显然，3个内部的div都应该是绝对定位来布局-->
         </div>
     </div>
 
+    <div id="demo2" class="demo-box">
+        <style>
+            #demo2 .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+                background-color: yellow;
+            }
+
+            #demo2 .light {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 8px;
+                left: 50%;
+                /*还记得下面这句干嘛的吗*/
+                transform: translate(-50%, 0);
+                border-radius: 10px;
+                background: black;
+            }
+        </style>
+        <div class="head">
+            <!--这个demo设置光线采集器的样式-->
+            <div class="light"></div>
+            <div class="front"></div>
+            <div class="voice"></div>
+        </div>
+    </div>
+
+    <div id="demo3" class="demo-box">
+        <style>
+            #demo3 .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+                background-color: yellow;
+            }
+
+            #demo3 .light {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 8px;
+                left: 50%;
+                /*还记得下面这句干嘛的吗*/
+                transform: translate(-50%, 0);
+                border-radius: 10px;
+                background: black;
+            }
+
+            #demo3 .front {
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                top: 20px;
+                left: 38%;
+                border-radius: 14px;
+                background: black;
+            }
+
+            #demo3 .voice {
+                position: absolute;
+                width: 60px;
+                height: 5px;
+                top: 25px;
+                left: 43%;
+                border-radius: 5px;
+                /*注意：css惯例，0.7写成.7*/
+                background-color: rgba(0, 0, 0, .7);
+            }
+        </style>
+        <div class="head">
+            <!--这个demo设置前置摄像头和小喇叭的样式
+                唯一让人困惑的是left的距离，
+                需要根据实际需要自己调整直至好看为止
+            -->
+            <div class="light"></div>
+            <div class="front"></div>
+            <div class="voice"></div>
+        </div>
+    </div>
+
+    <div id="demo4" class="demo-box">
+        <style>
+            #demo4 .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+                background-color: yellow;
+            }
+
+            #demo4 .light {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 8px;
+                left: 50%;
+                /*还记得下面这句干嘛的吗*/
+                transform: translate(-50%, 0);
+                border-radius: 10px;
+                /* background: black; */
+                box-shadow: 0 0 4px 4px inset  rgba(0,0,0,.9);
+            }
+
+            #demo4 .front {
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                top: 20px;
+                left: 38%;
+                border-radius: 14px;
+                /* background: black; */
+                box-shadow: 0 0 6px 5px inset rgba(0,0,0,.9);
+            }
+
+            #demo4 .voice {
+                position: absolute;
+                width: 60px;
+                height: 5px;
+                top: 25px;
+                left: 43%;
+                border-radius: 5px;
+                /*注意：css惯例，0.7写成.7*/
+                background-color: rgba(0, 0, 0, .7);
+            }
+        </style>
+        <div class="head">
+            <!--用box-shadow修饰下摄像头，使其更逼真
+                之前用background设置成黑色，实际上真是手机有反光效果，中间有个亮点
+                所以注意#demo4 .light和#demo4 .front最后一句样式，不再使用background
+            -->
+            <div class="light"></div>
+            <div class="front"></div>
+            <div class="voice"></div>
+        </div>
+    </div>
+
+    <!--下面就是把demo4的代码拼接到上一节最后-->
+    <div id="demo5" class="demo-box">
+        <style>
+            #demo5>.phone-wrapper {
+                position: relative;
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                box-shadow: 5px 5px 5px 1px #868583;
+                padding: 50px 16px 70px 16px;
+                box-sizing: border-box;
+            }
+
+            #demo5>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+
+            #demo5 .screen {
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+            }
+
+            #demo5 .home {
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+                width: 46px;
+                height: 46px;
+                border: 1px solid #989189;
+                border-radius: 50px;
+                /*往左边移动自身一半宽度*/
+                transform: translate(-50%, 0);
+                /*通过阴影，增加按钮质感*/
+                box-shadow: 0 0 2px 2px inset #989189;
+                /*鼠标变成手型，很常用，记住*/
+                cursor: pointer;
+            }
+        </style>
+        <div class="phone-wrapper">
+            <style>
+                #demo5 .head {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    height: 50px;
+                    background-color: yellow;
+                }
+    
+                #demo5 .light {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    top: 8px;
+                    left: 50%;
+                    /*还记得下面这句干嘛的吗*/
+                    transform: translate(-50%, 0);
+                    border-radius: 10px;
+                    /* background: black; */
+                    box-shadow: 0 0 4px 4px inset  rgba(0,0,0,.9);
+                }
+    
+                #demo5 .front {
+                    position: absolute;
+                    width: 13px;
+                    height: 13px;
+                    top: 20px;
+                    left: 38%;
+                    border-radius: 14px;
+                    /* background: black; */
+                    box-shadow: 0 0 6px 5px inset rgba(0,0,0,.9);
+                }
+    
+                #demo5 .voice {
+                    position: absolute;
+                    width: 60px;
+                    height: 5px;
+                    top: 25px;
+                    left: 43%;
+                    border-radius: 5px;
+                    background-color: rgba(0, 0, 0, .7);
+                }
+            </style>
+            <div class="head">
+                <div class="light"></div>
+                <div class="front"></div>
+                <div class="voice"></div>
+            </div>
+            <div class="screen"></div>
+            <div class="home"></div>
+        </div>
+    </div>
+
+    <!--把黄色去掉，其实这个黄色至始至终，只是我教学所用而已，实际根本无需去写-->
+    <div id="demo6" class="demo-box">
+        <style>
+            #demo6>.phone-wrapper {
+                position: relative;
+                width: 300px;
+                height: 560px;
+                border: 2px solid #aaa;
+                margin: 30px;
+                border-radius: 26px;
+                box-shadow: 5px 5px 5px 1px #868583;
+                padding: 50px 16px 70px 16px;
+                box-sizing: border-box;
+            }
+
+            #demo6>.phone-wrapper:hover {
+                box-shadow: 5px 5px 5px 3px #868583;
+            }
+
+            #demo6 .screen {
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+            }
+
+            #demo6 .home {
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+                width: 46px;
+                height: 46px;
+                border: 1px solid #989189;
+                border-radius: 50px;
+                /*往左边移动自身一半宽度*/
+                transform: translate(-50%, 0);
+                /*通过阴影，增加按钮质感*/
+                box-shadow: 0 0 2px 2px inset #989189;
+                /*鼠标变成手型，很常用，记住*/
+                cursor: pointer;
+            }
+
+            #demo6 .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+                /*去掉演示用的黄色*/
+                /* background-color: yellow; */
+            }
+        </style>
+        <div class="phone-wrapper">
+            <style>
+                #demo6 .head {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    height: 50px;
+                    /*去掉演示用的黄色*/
+                    /* background-color: yellow; */
+                }
+    
+                #demo6 .light {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    top: 8px;
+                    left: 50%;
+                    /*还记得下面这句干嘛的吗*/
+                    transform: translate(-50%, 0);
+                    border-radius: 10px;
+                    box-shadow: 0 0 4px 4px inset  rgba(0,0,0,.9);
+                }
+    
+                #demo6 .front {
+                    position: absolute;
+                    width: 13px;
+                    height: 13px;
+                    top: 20px;
+                    /* left: 38%; */
+                    /*由于head装入手机内后，宽度变小，所以要调整left距离，使得布局好看*/
+                    left:33%;
+                    border-radius: 14px;
+                    box-shadow: 0 0 6px 5px inset rgba(0,0,0,.9);
+                }
+    
+                #demo6 .voice {
+                    position: absolute;
+                    width: 60px;
+                    height: 5px;
+                    top: 25px;
+                    /* left: 43%; */
+                     /*由于head装入手机内后，宽度变小，所以要调整left距离，使得布局好看*/
+                    left:41%;
+                    border-radius: 5px;
+                    background-color: rgba(0, 0, 0, .7);
+                }
+            </style>
+            <div class="head">
+                <div class="light"></div>
+                <div class="front"></div>
+                <div class="voice"></div>
+            </div>
+            <div class="screen"></div>
+            <div class="home"></div>
+        </div>
+    </div>
 </body>
 
 </html>
