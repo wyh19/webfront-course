@@ -30,6 +30,94 @@
     <!--vue是一个前端框架，那么它就有自己的规则，这里介绍它的模板语法
     通过模板语法，可以轻松的绑定数据，前面介绍的{{}}是最基本的一个
     -->
+    <div id="demo1" class="demo" demo-name="demo1:绑定文本">
+        <div>我的名字：{{name}}</div>
+        <div>我的名字：<span v-text="name"></span></div>
+    </div>
+    <script>
+        //demo1:插入文本值的语法
+        var demo1 = new Vue({
+            el: '#demo1',
+            data: {
+                name: 'wyh19'
+            }
+        })
+        //比较下上面两种形式，一种是使用{{属性}}直接插入值，一种是使用 v-text="属性"插值
+    </script>
+
+    <div id="demo2" class="demo" demo-name="demo2:条件判断">
+        <div>我的名字：{{name}}</div>
+        <div v-if="age >= 18">我是成年人</div>
+        <div v-else>我是未成年人</div>
+    </div>
+    <script>
+        var demo2 = new Vue({
+            el: '#demo2',
+            data: {
+                name: 'wyh19',
+                age: 30,
+                // age:10, //尝试：把age换成10后刷新页面
+            }
+        })
+        /**
+        * 语法介绍：v-if="条件表达式",条件表达式为真，则渲染这个节点，否则不渲染这个节点
+        * 如果 紧跟着一个 v-else的节点，那么表达式不为真时，渲染这个节点
+        */
+    </script>
+
+    <div id="demo3" class="demo" demo-name="demo3:v-show控制隐藏显示">
+        <div>我的名字：{{name}}</div>
+        <div v-show="age >= 18">我是成年人</div>
+    </div>
+    <script>
+        var demo3 = new Vue({
+            el: '#demo3',
+            data: {
+                name: 'wyh19',
+                age: 30
+            }
+        })
+        /**
+        * 语法介绍：和 v-if很类似，唯一的区别是，v-if条件为假时，是不渲染节点的（按F12查看，不能找到这个元素）；
+        * 而 v-show 是通过条件的真假来决定节点是显示还是隐藏（节点本身渲染，按F12查看，可以找到这个元素）
+        */
+    </script>
+
+    <div id="demo4" class="demo" demo-name="demo4:v-for列表渲染">
+        <div>我的名字：{{name}}</div>
+        <div>我读过的书：</div>
+        <ul>
+            <li v-for="book in books">
+                {{book}}
+            </li>
+        </ul>
+        <div>再读一遍</div>
+        <ul>
+                <li v-for="(book ,index) in books">
+                    {{ index + 1 }}、{{ book }}
+                </li>
+            </ul>
+    </div>
+    <script>
+        var demo4 = new Vue({
+            el: '#demo4',
+            data: {
+                name: 'wyh19',
+                books: [
+                    "黑客与画家",
+                    "你不知道的js",
+                    "Nodejs实战",
+                    "js忍者秘籍"
+                ]
+            }
+        })
+        /**
+        * 语法介绍：v-for = "自定义变量名 in 属性"，如例子中，自定义变量名为book(也可以改成任何你觉得合理的名字)
+        * 属性是books,是data中定义的一个数组
+        * 第二个例子演示了如何获取索引，即 v-for="(自定义变量名,索引) in 属性"，索引是从0开始算的
+        */
+    </script>
+
 </body>
 
 </html>
