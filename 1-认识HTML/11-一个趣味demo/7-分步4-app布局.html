@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--这里开始分步讲解如何实现屏幕内部APP的布局
+        先把外壳放一边，只实现屏幕内部
+        最后把屏幕组装进去即可
+    -->
+    <style>
+        /*这只是用来划出一个格子作为演示*/
+        .demo-box {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 320px;
+            height: 500px;
+            border: 1px dashed #38f;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <div id="demo1" class="demo-box">
+        <!--
+            第一步：设置屏幕的大小，背景色，
+            之所以padding：2px,是为了屏幕显示内容时，有2个像素的内边距
+            由于设置了padding，所以需要设置 box-sizing: border-box矫正下大小
+        -->
+        <style>
+            #demo1>.screen {
+                box-sizing: border-box;
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+                padding: 2px;
+            }
+        </style>
+        <div class="screen">
+        </div>
+    </div>
+
+    <div id="demo2" class="demo-box">
+        <!--
+            第二步：屏幕内部防止content，content内部又分为app-list(上部)和docker-list(底部)
+            content设置宽高占满，背景色
+        -->
+        <style>
+            #demo2>.screen {
+                box-sizing: border-box;
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+                padding: 2px;
+            }
+
+            #demo2 .content {
+                width: 100%;
+                height: 100%;
+                background: #fff;
+            }
+        </style>
+        <div class="screen">
+            <div class="content">
+                <div class="app-list">
+
+                </div>
+                <div class="docker-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo3" class="demo-box">
+        <!--
+            第三步：先易后难，docker-list显然是固定在底部的，所以要用绝对定位
+            同时，父容器需要设置position:relative
+        -->
+        <style>
+            #demo3>.screen {
+                box-sizing: border-box;
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+                padding: 2px;
+            }
+
+            #demo3 .content {
+                /*因为docker-list是绝对定位，所以作为父容器，需要设置position*/
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+            }
+
+            #demo3 .docker-list {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 74px;
+                /*先随便找个背景色，最后要优化的*/
+                background: #ccc;
+            }
+        </style>
+        <div class="screen">
+            <div class="content">
+                <div class="app-list">
+
+                </div>
+                <div class="docker-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo4" class="demo-box">
+        <!--
+                第四步：实现docker内部4个图标
+            -->
+        <style>
+            #demo4>.screen {
+                box-sizing: border-box;
+                background: rgba(0, 0, 0, .8);
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+                padding: 2px;
+            }
+
+            #demo4 .content {
+                /*因为docker-list是绝对定位，所以作为父容器，需要设置position*/
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+            }
+
+            #demo4 .docker-list {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 74px;
+                background: #ccc;
+                /*这个demo添加的，docker需要flex布局*/
+                display: flex;
+                /*flex布局，垂直居中*/
+                align-items: center;
+            }
+
+            #demo4 .docker {
+                /*一共4个flex元素，所以每个占25%*/
+                flex: 25%;
+                padding: 8px;
+                height: 65px;
+                box-sizing: border-box;
+            }
+            #demo4 .logo {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 7px;
+                    background-image: url(./wechat.png);
+                    background-size: 100% 100%;
+                }
+        </style>
+        <div class="screen">
+            <div class="content">
+                <div class="app-list">
+
+                </div>
+                <div class="docker-list">
+                    <div class="docker">
+                        <div class="logo">
+                        </div>
+                    </div>
+                    <div class="docker">
+                        <div class="logo"></div>
+                    </div>
+                    <div class="docker">
+                        <div class="logo"></div>
+                    </div>
+                    <div class="docker">
+                        <div class="logo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--先这么多，下一节会接着最下面的代码写-->
+
+</body>
+
+</html>
