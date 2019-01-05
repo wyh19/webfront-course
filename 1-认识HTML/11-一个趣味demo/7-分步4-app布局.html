@@ -167,7 +167,6 @@
             }
 
             #demo4 .logo {
-                position: relative;
                 width: 100%;
                 height: 100%;
                 border-radius: 7px;
@@ -201,8 +200,9 @@
 
     <div id="demo5" class="demo-box">
         <!--
-                第四步：给图标右上角打个小标记
-            -->
+            第四步：给图标右上角打个小标记，使用绝对定位，
+            同样的小标记badge的父容器需要添加position设置
+        -->
         <style>
             #demo5>.screen {
                 box-sizing: border-box;
@@ -243,6 +243,7 @@
             }
 
             #demo5 .logo {
+                /*这个demo添加的*/
                 position: relative;
                 width: 100%;
                 height: 100%;
