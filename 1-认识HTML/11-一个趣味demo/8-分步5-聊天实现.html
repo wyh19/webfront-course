@@ -75,7 +75,7 @@
     </div>
 
     <div id="demo2" class="demo-box">
-        <!--第一步，屏幕内部分为上中下3个部分，按照之前的经验，父容器设置padding,留出不可用空间，上下两块绝对定位-->
+        <!--第二步，把头部搞定-->
         <style>
             #demo2 .chat-window {
                 position: relative;
@@ -90,17 +90,21 @@
                 left: 0;
                 right: 0;
                 height: 50px;
-                /*因为最上面统一设置了，所以不再书写box-sizing: border-box;*/
                 padding: 0 10px;
                 background: rgba(0, 0, 0, .8);
                 color: #fff;
+                /*demo2添加下面3行*/
+                display: flex;
+                align-items: center;
+                /*垂直方向居中*/
+                justify-content: space-between;
+                /*水平方向两端分散*/
             }
 
             #demo2 .chat-content {
                 position: relative;
                 height: 100%;
                 padding: 10px;
-                /*下面表示：垂直方向超出显示时，自动解决（也就是显示滚动条），因为聊天会很多，所以滚动条不可避免*/
                 overflow-y: auto;
             }
 
@@ -115,9 +119,93 @@
             }
         </style>
         <div class="chat-window">
-            <div class="head-bar"></div>
+            <div class="head-bar">
+                <!--demo2添加下面3行-->
+                <div class="back">返回</div>
+                <div class="chat-name">wyh19</div>
+                <div class="more">···</div>
+            </div>
             <div class="chat-content"></div>
             <div class="foot-bar"></div>
+        </div>
+    </div>
+
+    <div id="demo3" class="demo-box">
+        <!--第三步，把底部搞定-->
+        <style>
+            #demo3 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo3 .head-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50px;
+                padding: 0 10px;
+                background: rgba(0, 0, 0, .8);
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            #demo3 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo3 .foot-bar {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 40px;
+                background: #f0f0f0;
+                border-top: 1px solid #d9d9d9;
+                /*demo3添加下面的样式，使用flex布局，垂直居中*/
+                display: flex;
+                align-items: center;
+            }
+
+            /*demo3添加下面的样式*/
+            #demo3 .foot-bar>input {
+                flex: 1 1 100%;/*flex元素，1 1 表示可以变大和缩小*/
+                border: none;
+                border-radius: 5px;
+                background: #fff;
+                height: 28px;
+            }
+
+            /*demo3添加下面的样式*/
+            #demo3 .foot-bar>.icon {
+                flex: 0 0 20px; /*flex元素，0 0 表示不可变大和缩小*/
+                margin: 0 6px;
+                height: 20px;
+                border-radius: 20px;
+                border: 1px solid #d9d9d9;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="head-bar">
+                <div class="back">返回</div>
+                <div class="chat-name">wyh19</div>
+                <div class="more">···</div>
+            </div>
+            <div class="chat-content"></div>
+            <div class="foot-bar">
+                <!--demo3添加下面4行，标识底部的按钮和输入框-->
+                <div class="icon"></div>
+                <input />
+                <div class="icon"></div>
+                <div class="icon"></div>
+            </div>
         </div>
     </div>
 </body>
