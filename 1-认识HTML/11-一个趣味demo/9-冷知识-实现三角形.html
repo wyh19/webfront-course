@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--html并没有专门的样式实现三角形，但是有个特殊技巧，看下面的示意-->
+    <!--当一个容器（div）宽高都是0，但是设置了border会怎么样呢-->
+    <style>
+            #demo1 {
+                width: 0;
+                height: 0;
+                border: 30px solid blue;
+            }
+        </style>
+        <div id="demo1">
+        </div>
+
+     <!--br表示一个空行-->
+     <br />
+
+
+     <!--那么，只显示一个border的颜色-->
+    <style>
+        #demo2 {
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            /*transparent标识透明，也就是没颜色*/
+            border-left-color: blue;
+            /*指定一条边的颜色*/
+        }
+    </style>
+    <div id="demo2">
+    </div>
+
+    <br />
+
+
+    <style>
+        #demo3 {
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            /*transparent标识透明，也就是没颜色*/
+            border-left-color: blue;
+            border-right-color: red;
+            border-top-color: yellow;
+            border-bottom-color: blueviolet;
+        }
+    </style>
+    <div id="demo3">
+    </div>
+</body>
+
+</html>
