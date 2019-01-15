@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .demo-box {
+            vertical-align: top;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 300px;
+            height: 500px;
+            border: 1px dashed #38f;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        /*！！！！！注意：由于div大部分时候需要设置这个，所以统一在这里书写*/
+        div {
+            box-sizing: border-box;
+        }
+    </style>
+    <!--这里只实现聊天部分，把碍事的代码都给去了，最后组装-->
+    <div id="demo1" class="demo-box">
+        <!--第一步，把底部搞定-->
+        <style>
+            #demo1 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo1 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content"></div>
+        </div>
+    </div>
+</body>
+
+</html>
