@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <style>
+        .demo-box {
+            vertical-align: top;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 300px;
+            height: 500px;
+            border: 1px dashed #38f;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        /*！！！！！注意：由于div大部分时候需要设置这个，所以统一在这里书写*/
+        div {
+            box-sizing: border-box;
+        }
+    </style>
+    <!--这里只实现屏幕内部，做完后再填充到屏幕中去-->
+    <div id="demo1" class="demo-box">
+        <!--第一步，屏幕内部分为上中下3个部分，按照之前的经验，父容器设置padding,留出不可用空间，上下两块绝对定位-->
+        <style>
+            #demo1 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo1 .head-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50px;
+                /*因为最上面统一设置了，所以不再书写box-sizing: border-box;*/
+                padding: 0 10px;
+                background: rgba(0, 0, 0, .8);
+                color: #fff;
+            }
+
+            #demo1 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                /*下面表示：垂直方向超出显示时，自动解决（也就是显示滚动条），因为聊天会很多，所以滚动条不可避免*/
+                overflow-y: auto;
+            }
+
+            #demo1 .foot-bar {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 40px;
+                background: #f0f0f0;
+                border-top: 1px solid #d9d9d9;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="head-bar"></div>
+            <div class="chat-content"></div>
+            <div class="foot-bar"></div>
+        </div>
+    </div>
+
+    <div id="demo2" class="demo-box">
+        <!--第一步，屏幕内部分为上中下3个部分，按照之前的经验，父容器设置padding,留出不可用空间，上下两块绝对定位-->
+        <style>
+            #demo2 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo2 .head-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50px;
+                /*因为最上面统一设置了，所以不再书写box-sizing: border-box;*/
+                padding: 0 10px;
+                background: rgba(0, 0, 0, .8);
+                color: #fff;
+            }
+
+            #demo2 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                /*下面表示：垂直方向超出显示时，自动解决（也就是显示滚动条），因为聊天会很多，所以滚动条不可避免*/
+                overflow-y: auto;
+            }
+
+            #demo2 .foot-bar {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 40px;
+                background: #f0f0f0;
+                border-top: 1px solid #d9d9d9;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="head-bar"></div>
+            <div class="chat-content"></div>
+            <div class="foot-bar"></div>
+        </div>
+    </div>
 </body>
+
 </html>
