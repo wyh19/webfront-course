@@ -28,7 +28,7 @@
     </style>
     <!--这里只实现聊天部分，把碍事的代码都给去了，最后组装-->
     <div id="demo1" class="demo-box">
-        <!--第一步，把底部搞定-->
+        <!--第一步，清理代码-->
         <style>
             #demo1 .chat-window {
                 position: relative;
@@ -45,9 +45,38 @@
             }
         </style>
         <div class="chat-window">
-            <div class="chat-content"></div>
+            <div class="chat-content">
+
+            </div>
         </div>
     </div>
+
+    <div id="demo2" class="demo-box">
+            <!--第二步，尝试实现一行聊天-->
+            <style>
+                #demo2 .chat-window {
+                    position: relative;
+                    background-color: #eee;
+                    height: 100%;
+                    padding: 50px 0 40px 0;
+                }
+    
+                #demo2 .chat-content {
+                    position: relative;
+                    height: 100%;
+                    padding: 10px;
+                    overflow-y: auto;
+                }
+            </style>
+            <div class="chat-window">
+                <div class="chat-content">
+                    <div>
+                        <div>你好。</div>
+                        <img src="./avatar.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
