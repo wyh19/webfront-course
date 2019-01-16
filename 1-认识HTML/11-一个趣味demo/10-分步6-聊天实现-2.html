@@ -52,58 +52,70 @@
     </div>
 
     <div id="demo2" class="demo-box">
-            <!--第二步，尝试实现一行聊天，不加任何样式-->
-            <style>
-                #demo2 .chat-window {
-                    position: relative;
-                    background-color: #eee;
-                    height: 100%;
-                    padding: 50px 0 40px 0;
-                }
-    
-                #demo2 .chat-content {
-                    position: relative;
-                    height: 100%;
-                    padding: 10px;
-                    overflow-y: auto;
-                }
-            </style>
-            <div class="chat-window">
-                <div class="chat-content">
-                    <div>
-                        <div>你好。</div>
-                        <img src="./avatar.png" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--第二步，尝试实现一行聊天，不加任何样式-->
+        <style>
+            #demo2 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
 
-        <div id="demo3" class="demo-box">
-            <!--第三步，给聊天套上样式-->
-            <style>
-                #demo3 .chat-window {
-                    position: relative;
-                    background-color: #eee;
-                    height: 100%;
-                    padding: 50px 0 40px 0;
-                }
-    
-                #demo3 .chat-content {
-                    position: relative;
-                    height: 100%;
-                    padding: 10px;
-                    overflow-y: auto;
-                }
-            </style>
-            <div class="chat-window">
-                <div class="chat-content">
-                    <div>
-                        <div>你好。</div>
-                        <img class="avatar" src="./avatar.png" />
-                    </div>
+            #demo2 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div>
+                    <div>你好。</div>
+                    <img src="./avatar.png" />
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="demo3" class="demo-box">
+        <!--第三步，给聊天套上样式-->
+        <style>
+            #demo3 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo3 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo3 .msg {
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+            }
+
+            #demo3 .avatar {
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
