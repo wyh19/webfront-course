@@ -12,13 +12,12 @@
     <!--先做一个无聊的尝试-->
     <style>
         #demo0 {
-            width: 10px;
-            height: 10px;
+            width: 20px;
+            height: 20px;
             border: 50px solid black;
         }
     </style>
     <div id="demo0"></div>
-
 
     <!--br表示一个空行-->
     <br />
@@ -26,9 +25,10 @@
     <!--那么思考一下，50像素宽的边框是怎么绘制的呢，给各个边框换个颜色-->
     <style>
         #demo1 {
-            width: 10px;
-            height: 10px;
-            border: 50px solid black; /*这里虽然设置了黑色，但是会被下面的细节代码给屏蔽掉*/
+            width: 20px;
+            height: 20px;
+            border: 50px solid black;
+            /*这里虽然设置了黑色，但是会被下面的细节代码给屏蔽掉*/
             border-left-color: blue;
             border-right-color: red;
             border-top-color: yellow;
@@ -47,59 +47,55 @@
         #demo2 {
             width: 0;
             height: 0;
-            border: 30px solid blue;
+            border: 50px solid black;
         }
     </style>
-    <div id="demo2">
-    </div>
-
+    <div id="demo2"></div>
 
     <br />
-
-
-    <!--那么，只显示一个border的颜色-->
-    <style>
-        #demo3 {
-            width: 0;
-            height: 0;
-            border: 30px solid transparent;
-            /*transparent标识透明，也就是没颜色*/
-            border-left-color: blue;
-            /*指定一条边的颜色*/
-        }
-    </style>
-    <div id="demo3">
-    </div>
-
-    <br />
-
 
     <style>
         #demo4 {
             width: 0;
             height: 0;
-            border: 30px solid transparent;
+            border: 50px solid black;
             border-left-color: blue;
             border-right-color: red;
             border-top-color: yellow;
             border-bottom-color: blueviolet;
         }
     </style>
-    <div id="demo4">
-    </div>
+    <div id="demo4"></div>
+
+    <br />
+
+    <!--那么，只显示一个border的颜色-->
+    <style>
+        #demo3 {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            /*transparent标识透明，也就是没颜色*/
+            border-left-color: blue;
+            /*指定一条边的颜色*/
+        }
+    </style>
+    <div id="demo3"></div>
+
     <!--发挥你的想象力，实现其他形式的三角形，我先起个头...-->
     <br />
+
     <style>
         #demo5 {
             width: 0;
             height: 0;
-            border: 30px solid transparent;
+            border: 50px solid transparent;
             border-left-color: blue;
             border-top-color: blue;
         }
     </style>
-    <div id="demo5">
-    </div>
+    <div id="demo5"></div>
+
 </body>
 
 </html>
