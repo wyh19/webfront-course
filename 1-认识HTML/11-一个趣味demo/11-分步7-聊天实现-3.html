@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .demo-box {
+            vertical-align: top;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 300px;
+            height: 500px;
+            border: 1px dashed #38f;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        /*！！！！！注意：由于div大部分时候需要设置这个，所以统一在这里书写*/
+        div {
+            box-sizing: border-box;
+        }
+    </style>
+    <!--这里接着分步6继续实现-->
+    <div id="demo1" class="demo-box">
+        <!--第一步，尝试很长的文字-->
+        <style>
+            #demo1 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo1 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo1 .msg-item {
+                position: relative;
+                margin: 12px 0;
+            }
+
+            #demo1 .msg-item::after {
+                display: block;
+                content: '';
+                clear: both;
+            }
+
+            #demo1 .msg {
+                position: relative;
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                margin-right: 40px;
+            }
+
+            #demo1 .msg::after {
+                position: absolute;
+                content: '';
+                top: 8px;
+                right: -12px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                border-left-color: #B2E281;
+            }
+
+            #demo1 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <div class="msg-item">
+                    <div class="msg">测试说一句较长的话
+                    </div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <div class="msg-item">
+                    <div class="msg">测试说一句很长很长的话，风到这里就是粘
+                        粘住过客的思念
+                        雨到了这里缠成线
+                        缠着我们流连人世间</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--到这里位置，‘我’说的消息都正常了，但是怎么实现对方的消息呢，根据上面的经验，
+        显然要调整头像的位置、msg的float不再是right而是left、msg里的三角的位置也要调整到左边
+    -->
+
+</body>
+
+</html>
