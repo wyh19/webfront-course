@@ -95,7 +95,7 @@
                 overflow-y: auto;
             }
 
-            #demo3 .msg-item{
+            #demo3 .msg-item {
                 /*暂时先空着*/
             }
 
@@ -141,19 +141,71 @@
                 overflow-y: auto;
             }
 
-            #demo4 .msg-item{
-                
-            }
+            #demo4 .msg-item {}
 
             #demo4 .msg {
                 /*下一行是demo4加的*/
-                float:right;
+                float: right;
                 padding: 5px 8px;
                 border-radius: 5px;
                 background-color: #B2E281;
             }
 
             #demo4 .avatar {
+                /*下一行是demo4加的*/
+                float: right;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--msg符合我的想法，但是img跟我想的不一样，那么直接用绝对定位来解决这种疑难问题-->
+
+    <div id="demo5" class="demo-box">
+        <!--第五步，将头像绝对定位-->
+        <style>
+            #demo5 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo5 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo5 .msg-item {
+                /*下一行是demo5加的*/
+                position: relative;
+            }
+
+            #demo5 .msg {
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+            }
+
+            #demo5 .avatar {
+                /*下一行是demo5注释掉的*/
+                /* float: right; */
+                /*下面3行是demo5加的*/
+                position: absolute;
+                top: 0;
+                right: 0;
                 width: 30px;
                 height: 30px;
                 border-radius: 2px;
@@ -169,7 +221,231 @@
         </div>
     </div>
 
+    <div id="demo6" class="demo-box">
+        <!--第六步，解决文字和头像重叠-->
+        <style>
+            #demo6 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
 
+            #demo6 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo6 .msg-item {
+                position: relative;
+            }
+
+            #demo6 .msg {
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                /*下一行是demo6添加的*/
+                margin-right: 40px;
+            }
+
+            #demo6 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo7" class="demo-box">
+        <!--第七步，尝试多条聊天-->
+        <style>
+            #demo7 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo7 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo7 .msg-item {
+                position: relative;
+            }
+
+            #demo7 .msg {
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                margin-right: 40px;
+            }
+
+            #demo7 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <!--下面4行是demo7加的-->
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--demo7又出现管问题了，不要慌，因为这里用到了float，所以出现问题第一反应是清除浮动，详见第9节-->
+
+    <div id="demo8" class="demo-box">
+        <!--第八步，清除浮动-->
+        <style>
+            #demo8 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo8 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo8 .msg-item {
+                position: relative;
+            }
+
+            /*demo8添加*/
+            #demo8 .msg-item::after {
+                display: block;
+                content: '';
+                clear: both;
+            }
+
+            #demo8 .msg {
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                margin-right: 40px;
+            }
+
+            #demo8 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <!--下面4行是demo8加的-->
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo9" class="demo-box">
+        <!--第九步，增加聊天之间间距-->
+        <style>
+            #demo9 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo9 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo9 .msg-item {
+                position: relative;
+                /*demo9添加*/
+                margin: 12px 0;
+            }
+
+            #demo9 .msg-item::after {
+                display: block;
+                content: '';
+                clear: both;
+            }
+
+            #demo9 .msg {
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                margin-right: 40px;
+            }
+
+            #demo9 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <!--下面4行是demo9加的-->
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 </body>
 
 </html>
