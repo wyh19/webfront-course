@@ -27,35 +27,35 @@
         }
     </style>
     <!--这里接着分步6继续实现-->
-    <div id="demo1" class="demo-box">
+    <div id="demo2" class="demo-box">
         <!--第一步，尝试很长的文字-->
         <style>
-            #demo1 .chat-window {
+            #demo2 .chat-window {
                 position: relative;
                 background-color: #eee;
                 height: 100%;
                 padding: 50px 0 40px 0;
             }
 
-            #demo1 .chat-content {
+            #demo2 .chat-content {
                 position: relative;
                 height: 100%;
                 padding: 10px;
                 overflow-y: auto;
             }
 
-            #demo1 .msg-item {
+            #demo2 .msg-item {
                 position: relative;
                 margin: 12px 0;
             }
 
-            #demo1 .msg-item::after {
+            #demo2 .msg-item::after {
                 display: block;
                 content: '';
                 clear: both;
             }
 
-            #demo1 .msg {
+            #demo2 .msg {
                 position: relative;
                 float: right;
                 padding: 5px 8px;
@@ -64,7 +64,7 @@
                 margin-right: 40px;
             }
 
-            #demo1 .msg::after {
+            #demo2 .msg::after {
                 position: absolute;
                 content: '';
                 top: 8px;
@@ -75,7 +75,7 @@
                 border-left-color: #B2E281;
             }
 
-            #demo1 .avatar {
+            #demo2 .avatar {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -112,7 +112,124 @@
     <!--到这里位置，‘我’说的消息都正常了，但是怎么实现对方的消息呢，根据上面的经验，
         显然要调整头像的位置、msg的float不再是right而是left、msg里的三角的位置也要调整到左边
     -->
+    <div id="demo2" class="demo-box">
+        <!--第二步，尝试很长的文字-->
+        <style>
+            #demo2 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
 
+            #demo2 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo2 .msg-item {
+                position: relative;
+                margin: 12px 0;
+            }
+
+            #demo2 .msg-item::after {
+                display: block;
+                content: '';
+                clear: both;
+            }
+
+            #demo2 .msg {
+                position: relative;
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                margin-right: 40px;
+            }
+
+            #demo2 .msg::after {
+                position: absolute;
+                content: '';
+                top: 8px;
+                right: -12px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                border-left-color: #B2E281;
+            }
+
+            #demo2 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+
+            /*下面的样式都是demo2添加的，基本仿之前的，只是在位置上做出修改*/
+            #demo2 .msg-you {
+                position: relative;
+                /* float: right; */
+                float: left;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                /* margin-right: 40px; */
+                margin-left: 40px;
+            }
+
+            #demo2 .msg-you::after {
+                position: absolute;
+                content: '';
+                top: 8px;
+                /* right: -12px; */
+                left: -12px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                /* border-left-color: #B2E281; */
+                border-right-color: #B2E281;
+            }
+
+            #demo2 .avatar-you {
+                position: absolute;
+                top: 0;
+                /* right: 0; */
+                left: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <!--demo2修改，下面的你好变成对方说的，为了做出区分，样式都做出修改-->
+                <div class="msg-item">
+                    <div class="msg-you">你好。</div>
+                    <img class="avatar-you" src="./wechat.png" />
+                </div>
+                <div class="msg-item">
+                    <div class="msg">测试说一句较长的话
+                    </div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <div class="msg-item">
+                    <div class="msg-you">测试说一句很长很长的话，风到这里就是粘
+                        粘住过客的思念
+                        雨到了这里缠成线
+                        缠着我们流连人世间</div>
+                    <img class="avatar-you" src="./wechat.png" />
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
