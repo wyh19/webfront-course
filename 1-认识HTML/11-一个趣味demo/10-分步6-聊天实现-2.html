@@ -95,6 +95,10 @@
                 overflow-y: auto;
             }
 
+            #demo3 .msg-item{
+                /*暂时先空着*/
+            }
+
             #demo3 .msg {
                 padding: 5px 8px;
                 border-radius: 5px;
@@ -116,6 +120,55 @@
             </div>
         </div>
     </div>
+    <!--demo3只是尝试性的加了一点样式，发现两个问题，msg占满一行，img被挤到下一行了
+        我需要的是msg靠右边，同时img在msg的右边
+        很自然的，我想到的float:right(之前介绍过float:left，左浮动；这是右浮动)
+    -->
+    <div id="demo4" class="demo-box">
+        <!--第四步，尝试float:right-->
+        <style>
+            #demo4 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo4 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo4 .msg-item{
+                
+            }
+
+            #demo4 .msg {
+                /*下一行是demo4加的*/
+                float:right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+            }
+
+            #demo4 .avatar {
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
