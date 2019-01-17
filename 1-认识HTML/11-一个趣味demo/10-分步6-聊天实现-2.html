@@ -445,7 +445,81 @@
         </div>
     </div>
 
-    
+    <div id="demo10" class="demo-box">
+        <!--第十步，增加聊天的三角角标-->
+        <style>
+            #demo10 .chat-window {
+                position: relative;
+                background-color: #eee;
+                height: 100%;
+                padding: 50px 0 40px 0;
+            }
+
+            #demo10 .chat-content {
+                position: relative;
+                height: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            #demo10 .msg-item {
+                position: relative;
+                margin: 12px 0;
+            }
+
+            #demo10 .msg-item::after {
+                display: block;
+                content: '';
+                clear: both;
+            }
+
+            #demo10 .msg {
+                /*demo10添加下一行，因为三角是绝对定位的，父容器需要相对定位*/
+                position: relative;
+                float: right;
+                padding: 5px 8px;
+                border-radius: 5px;
+                background-color: #B2E281;
+                margin-right: 40px;
+            }
+
+            /*demo10添加下面的样式，使用绝对定位放置一个三角*/
+            #demo10 .msg::after {
+                position: absolute;
+                content: '';
+                top: 8px;
+                right: -12px;
+                /*下面4行是实现三角的代码*/
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                border-left-color: #B2E281;
+            }
+
+            #demo10 .avatar {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 2px;
+            }
+        </style>
+        <div class="chat-window">
+            <div class="chat-content">
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+                <!--下面4行是demo10加的-->
+                <div class="msg-item">
+                    <div class="msg">你好。</div>
+                    <img class="avatar" src="./avatar.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
