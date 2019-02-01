@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .phone-wrapper {
+            position: relative;
+            width: 300px;
+            height: 560px;
+            border: 2px solid #aaa;
+            margin: 30px;
+            border-radius: 26px;
+            box-shadow: 5px 5px 5px 1px #868583;
+            padding: 50px 16px 70px 16px;
+            box-sizing: border-box;
+        }
+
+        .phone-wrapper:hover {
+            box-shadow: 5px 5px 5px 3px #868583;
+        }
+
+        .screen {
+            background: rgba(0, 0, 0, .8);
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+        }
+
+        .home {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            width: 46px;
+            height: 46px;
+            border: 1px solid #989189;
+            border-radius: 50px;
+            /*往左边移动自身一半宽度*/
+            transform: translate(-50%, 0);
+            /*通过阴影，增加按钮质感*/
+            box-shadow: 0 0 2px 2px inset #989189;
+            /*鼠标变成手型，很常用，记住*/
+            cursor: pointer;
+        }
+
+        .head {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 50px;
+            /*去掉演示用的黄色*/
+            /* background-color: yellow; */
+        }
+    </style>
+    <div class="phone-wrapper">
+        <style>
+            .head {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 50px;
+            }
+
+            .light {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 8px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                border-radius: 10px;
+                box-shadow: 0 0 4px 4px inset rgba(0, 0, 0, .9);
+            }
+
+            .front {
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                top: 20px;
+                /* left: 38%; */
+                /*由于head装入手机内后，宽度变小，所以要调整left距离，使得布局好看*/
+                left: 33%;
+                border-radius: 14px;
+                box-shadow: 0 0 6px 5px inset rgba(0, 0, 0, .9);
+            }
+
+            .voice {
+                position: absolute;
+                width: 60px;
+                height: 5px;
+                top: 25px;
+                /* left: 43%; */
+                /*由于head装入手机内后，宽度变小，所以要调整left距离，使得布局好看*/
+                left: 41%;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, .7);
+            }
+        </style>
+        <div class="head">
+            <div class="light"></div>
+            <div class="front"></div>
+            <div class="voice"></div>
+        </div>
+        <div class="screen">
+            <!--!这一段以上的代码都是《6-分步3-头部》的demo6的代码-->
+            <!--screen的代码来自《11-分步7-聊天实现》的demo2的代码-->
+            <style>
+                div {
+                    box-sizing: border-box;
+                }
+
+                .screen {
+                    box-sizing: border-box;
+                    background: rgba(0, 0, 0, .8);
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 3px;
+                    padding: 2px;
+                }
+
+                .chat-window {
+                    position: relative;
+                    background-color: #eee;
+                    height: 100%;
+                    /* padding: 50px 0 40px 0; */
+                }
+
+                .chat-content {
+                    position: relative;
+                    height: 100%;
+                    padding: 10px;
+                    overflow-y: auto;
+                }
+
+                .msg-item {
+                    position: relative;
+                    margin: 12px 0;
+                }
+
+                .msg-item::after {
+                    display: block;
+                    content: '';
+                    clear: both;
+                }
+
+                .msg {
+                    position: relative;
+                    float: right;
+                    padding: 5px 8px;
+                    border-radius: 5px;
+                    background-color: #B2E281;
+                    margin-right: 40px;
+                }
+
+                .msg::after {
+                    position: absolute;
+                    content: '';
+                    top: 8px;
+                    right: -12px;
+                    width: 0;
+                    height: 0;
+                    border: 6px solid transparent;
+                    border-left-color: #B2E281;
+                }
+
+                .avatar {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 2px;
+                }
+
+                /*下面的样式都是demo2添加的，基本仿之前的，只是在位置上做出修改*/
+                .msg-you {
+                    position: relative;
+                    /* float: right; */
+                    float: left;
+                    padding: 5px 8px;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    /* margin-right: 40px; */
+                    margin-left: 40px;
+                }
+
+                .msg-you::after {
+                    position: absolute;
+                    content: '';
+                    top: 8px;
+                    /* right: -12px; */
+                    left: -12px;
+                    width: 0;
+                    height: 0;
+                    border: 6px solid transparent;
+                    /* border-left-color: #B2E281; */
+                    border-right-color: #fff;
+                }
+
+                .avatar-you {
+                    position: absolute;
+                    top: 0;
+                    /* right: 0; */
+                    left: 0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 2px;
+                }
+            </style>
+            <div class="chat-window">
+                <div class="chat-content">
+                    <div class="msg-item">
+                        <div class="msg">你好。</div>
+                        <img class="avatar" src="./avatar.png" />
+                    </div>
+                    <!--demo2修改，下面的你好变成对方说的，为了做出区分，样式都做出修改-->
+                    <div class="msg-item">
+                        <div class="msg-you">你好。</div>
+                        <img class="avatar-you" src="./wechat.png" />
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg">测试说一句较长的话
+                        </div>
+                        <img class="avatar" src="./avatar.png" />
+                    </div>
+                    <div class="msg-item">
+                        <div class="msg-you">测试说一句很长很长的话，风到这里就是粘
+                            粘住过客的思念
+                            雨到了这里缠成线
+                            缠着我们流连人世间</div>
+                        <img class="avatar-you" src="./wechat.png" />
+                    </div>
+                </div>
+            </div>
+            <!--!这一段以下的代码都是《6-分步3-头部》的demo6的代码-->
+        </div>
+        <div class="home"></div>
+    </div>
+</body>
+
+</html>
